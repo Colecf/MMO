@@ -9,26 +9,34 @@
 /* Begin PBXBuildFile section */
 		ED7450041863BE3C008EB262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450031863BE3C008EB262 /* Cocoa.framework */; };
 		ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED74500C1863BE3C008EB262 /* InfoPlist.strings */; };
-		ED7450101863BE3C008EB262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED74500F1863BE3C008EB262 /* main.m */; };
+		ED7450101863BE3C008EB262 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74500F1863BE3C008EB262 /* main.cpp */; };
 		ED7450141863BE3C008EB262 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = ED7450121863BE3C008EB262 /* Credits.rtf */; };
-		ED7450171863BE3C008EB262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7450161863BE3C008EB262 /* AppDelegate.m */; };
-		ED74501A1863BE3C008EB262 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7450181863BE3C008EB262 /* MainMenu.xib */; };
-		ED74501C1863BE3C008EB262 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED74501B1863BE3C008EB262 /* Images.xcassets */; };
-		ED7450231863BE3C008EB262 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450221863BE3C008EB262 /* XCTest.framework */; };
-		ED7450241863BE3C008EB262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450031863BE3C008EB262 /* Cocoa.framework */; };
-		ED74502C1863BE3C008EB262 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED74502A1863BE3C008EB262 /* InfoPlist.strings */; };
-		ED74502E1863BE3C008EB262 /* MMOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED74502D1863BE3C008EB262 /* MMOTests.m */; };
+		ED7450381863BF7C008EB262 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450371863BF7C008EB262 /* SDL2.framework */; };
+		ED74503A1863C093008EB262 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED7450371863BF7C008EB262 /* SDL2.framework */; };
+		ED74503E1863C115008EB262 /* RealMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74503C1863C115008EB262 /* RealMain.cpp */; };
+		ED7450401863C1E8008EB262 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED74503F1863C1E8008EB262 /* SDL2_image.framework */; };
+		ED7450411863C1EC008EB262 /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED74503F1863C1E8008EB262 /* SDL2_image.framework */; };
+		ED7450431863C21B008EB262 /* SDL2_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450421863C21B008EB262 /* SDL2_net.framework */; };
+		ED7450441863C21F008EB262 /* SDL2_net.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED7450421863C21B008EB262 /* SDL2_net.framework */; };
+		ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED7450491863C584008EB262 /* ResourcePath.mm */; };
+		ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74504C1863C7A7008EB262 /* RenderManager.cpp */; };
+		EDB2BCE3186A4F25003AB337 /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB2BCE2186A4F25003AB337 /* tileset.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ED7450251863BE3C008EB262 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ED744FF81863BE3C008EB262 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ED744FFF1863BE3C008EB262;
-			remoteInfo = MMO;
+/* Begin PBXCopyFilesBuildPhase section */
+		ED7450391863C089008EB262 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED7450441863C21F008EB262 /* SDL2_net.framework in CopyFiles */,
+				ED7450411863C1EC008EB262 /* SDL2_image.framework in CopyFiles */,
+				ED74503A1863C093008EB262 /* SDL2.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED7450001863BE3C008EB262 /* MMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,18 +46,19 @@
 		ED7450081863BE3C008EB262 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED74500B1863BE3C008EB262 /* MMO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMO-Info.plist"; sourceTree = "<group>"; };
 		ED74500D1863BE3C008EB262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ED74500F1863BE3C008EB262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ED7450111863BE3C008EB262 /* MMO-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMO-Prefix.pch"; sourceTree = "<group>"; };
+		ED74500F1863BE3C008EB262 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ED7450131863BE3C008EB262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		ED7450151863BE3C008EB262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		ED7450161863BE3C008EB262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ED7450191863BE3C008EB262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		ED74501B1863BE3C008EB262 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		ED7450211863BE3C008EB262 /* MMOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7450221863BE3C008EB262 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		ED7450291863BE3C008EB262 /* MMOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MMOTests-Info.plist"; sourceTree = "<group>"; };
-		ED74502B1863BE3C008EB262 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		ED74502D1863BE3C008EB262 /* MMOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMOTests.m; sourceTree = "<group>"; };
+		ED7450371863BF7C008EB262 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		ED74503C1863C115008EB262 /* RealMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RealMain.cpp; sourceTree = "<group>"; };
+		ED74503F1863C1E8008EB262 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		ED7450421863C21B008EB262 /* SDL2_net.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_net.framework; path = ../../../../Library/Frameworks/SDL2_net.framework; sourceTree = "<group>"; };
+		ED7450481863C584008EB262 /* ResourcePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourcePath.h; sourceTree = "<group>"; };
+		ED7450491863C584008EB262 /* ResourcePath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
+		ED74504B1863C5A9008EB262 /* RealMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealMain.h; sourceTree = "<group>"; };
+		ED74504C1863C7A7008EB262 /* RenderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderManager.cpp; sourceTree = "<group>"; };
+		ED74504D1863C7A7008EB262 /* RenderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderManager.h; sourceTree = "<group>"; };
+		EDB2BCE2186A4F25003AB337 /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7450431863C21B008EB262 /* SDL2_net.framework in Frameworks */,
+				ED7450401863C1E8008EB262 /* SDL2_image.framework in Frameworks */,
+				ED7450381863BF7C008EB262 /* SDL2.framework in Frameworks */,
 				ED7450041863BE3C008EB262 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED74501E1863BE3C008EB262 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED7450241863BE3C008EB262 /* Cocoa.framework in Frameworks */,
-				ED7450231863BE3C008EB262 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				ED7450091863BE3C008EB262 /* MMO */,
-				ED7450271863BE3C008EB262 /* MMOTests */,
 				ED7450021863BE3C008EB262 /* Frameworks */,
 				ED7450011863BE3C008EB262 /* Products */,
 			);
@@ -87,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				ED7450001863BE3C008EB262 /* MMO.app */,
-				ED7450211863BE3C008EB262 /* MMOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +96,9 @@
 		ED7450021863BE3C008EB262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED7450421863C21B008EB262 /* SDL2_net.framework */,
+				ED74503F1863C1E8008EB262 /* SDL2_image.framework */,
+				ED7450371863BF7C008EB262 /* SDL2.framework */,
 				ED7450031863BE3C008EB262 /* Cocoa.framework */,
 				ED7450221863BE3C008EB262 /* XCTest.framework */,
 				ED7450051863BE3C008EB262 /* Other Frameworks */,
@@ -115,10 +119,8 @@
 		ED7450091863BE3C008EB262 /* MMO */ = {
 			isa = PBXGroup;
 			children = (
-				ED7450151863BE3C008EB262 /* AppDelegate.h */,
-				ED7450161863BE3C008EB262 /* AppDelegate.m */,
-				ED7450181863BE3C008EB262 /* MainMenu.xib */,
-				ED74501B1863BE3C008EB262 /* Images.xcassets */,
+				ED74503B1863C0F3008EB262 /* Code */,
+				EDB2BCE1186A4F1A003AB337 /* Resources */,
 				ED74500A1863BE3C008EB262 /* Supporting Files */,
 			);
 			path = MMO;
@@ -127,31 +129,33 @@
 		ED74500A1863BE3C008EB262 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED74500F1863BE3C008EB262 /* main.cpp */,
+				ED7450481863C584008EB262 /* ResourcePath.h */,
+				ED7450491863C584008EB262 /* ResourcePath.mm */,
 				ED74500B1863BE3C008EB262 /* MMO-Info.plist */,
 				ED74500C1863BE3C008EB262 /* InfoPlist.strings */,
-				ED74500F1863BE3C008EB262 /* main.m */,
-				ED7450111863BE3C008EB262 /* MMO-Prefix.pch */,
 				ED7450121863BE3C008EB262 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ED7450271863BE3C008EB262 /* MMOTests */ = {
+		ED74503B1863C0F3008EB262 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				ED74502D1863BE3C008EB262 /* MMOTests.m */,
-				ED7450281863BE3C008EB262 /* Supporting Files */,
+				ED74504B1863C5A9008EB262 /* RealMain.h */,
+				ED74503C1863C115008EB262 /* RealMain.cpp */,
+				ED74504D1863C7A7008EB262 /* RenderManager.h */,
+				ED74504C1863C7A7008EB262 /* RenderManager.cpp */,
 			);
-			path = MMOTests;
+			name = Code;
 			sourceTree = "<group>";
 		};
-		ED7450281863BE3C008EB262 /* Supporting Files */ = {
+		EDB2BCE1186A4F1A003AB337 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				ED7450291863BE3C008EB262 /* MMOTests-Info.plist */,
-				ED74502A1863BE3C008EB262 /* InfoPlist.strings */,
+				EDB2BCE2186A4F25003AB337 /* tileset.png */,
 			);
-			name = "Supporting Files";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +168,7 @@
 				ED744FFC1863BE3C008EB262 /* Sources */,
 				ED744FFD1863BE3C008EB262 /* Frameworks */,
 				ED744FFE1863BE3C008EB262 /* Resources */,
+				ED7450391863C089008EB262 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -174,24 +179,6 @@
 			productReference = ED7450001863BE3C008EB262 /* MMO.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ED7450201863BE3C008EB262 /* MMOTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ED7450341863BE3C008EB262 /* Build configuration list for PBXNativeTarget "MMOTests" */;
-			buildPhases = (
-				ED74501D1863BE3C008EB262 /* Sources */,
-				ED74501E1863BE3C008EB262 /* Frameworks */,
-				ED74501F1863BE3C008EB262 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ED7450261863BE3C008EB262 /* PBXTargetDependency */,
-			);
-			name = MMOTests;
-			productName = MMOTests;
-			productReference = ED7450211863BE3C008EB262 /* MMOTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,11 +187,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Cole Faust";
-				TargetAttributes = {
-					ED7450201863BE3C008EB262 = {
-						TestTargetID = ED744FFF1863BE3C008EB262;
-					};
-				};
 			};
 			buildConfigurationList = ED744FFB1863BE3C008EB262 /* Build configuration list for PBXProject "MMO" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,7 +202,6 @@
 			projectRoot = "";
 			targets = (
 				ED744FFF1863BE3C008EB262 /* MMO */,
-				ED7450201863BE3C008EB262 /* MMOTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,17 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */,
-				ED74501C1863BE3C008EB262 /* Images.xcassets in Resources */,
 				ED7450141863BE3C008EB262 /* Credits.rtf in Resources */,
-				ED74501A1863BE3C008EB262 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED74501F1863BE3C008EB262 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED74502C1863BE3C008EB262 /* InfoPlist.strings in Resources */,
+				EDB2BCE3186A4F25003AB337 /* tileset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,28 +224,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED7450171863BE3C008EB262 /* AppDelegate.m in Sources */,
-				ED7450101863BE3C008EB262 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED74501D1863BE3C008EB262 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED74502E1863BE3C008EB262 /* MMOTests.m in Sources */,
+				ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */,
+				ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */,
+				ED74503E1863C115008EB262 /* RealMain.cpp in Sources */,
+				ED7450101863BE3C008EB262 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ED7450261863BE3C008EB262 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ED744FFF1863BE3C008EB262 /* MMO */;
-			targetProxy = ED7450251863BE3C008EB262 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ED74500C1863BE3C008EB262 /* InfoPlist.strings */ = {
@@ -290,22 +248,6 @@
 				ED7450131863BE3C008EB262 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		ED7450181863BE3C008EB262 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED7450191863BE3C008EB262 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		ED74502A1863BE3C008EB262 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED74502B1863BE3C008EB262 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -384,9 +326,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MMO/MMO-Prefix.pch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,51 +344,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MMO/MMO-Prefix.pch";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		ED7450351863BE3C008EB262 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MMO.app/Contents/MacOS/MMO";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MMO/MMO-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MMOTests/MMOTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		ED7450361863BE3C008EB262 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MMO.app/Contents/MacOS/MMO";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MMO/MMO-Prefix.pch";
-				INFOPLIST_FILE = "MMOTests/MMOTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -464,14 +376,7 @@
 				ED7450331863BE3C008EB262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		ED7450341863BE3C008EB262 /* Build configuration list for PBXNativeTarget "MMOTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ED7450351863BE3C008EB262 /* Debug */,
-				ED7450361863BE3C008EB262 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

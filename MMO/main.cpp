@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Cole Faust. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#include "RealMain.h"
 
-int main(int argc, const char * argv[])
+int main(int argc, char * arg[])
 {
-    return NSApplicationMain(argc, argv);
+    return realMain(argc, arg);
 }
