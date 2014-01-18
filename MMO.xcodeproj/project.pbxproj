@@ -20,10 +20,28 @@
 		ED7450441863C21F008EB262 /* SDL2_net.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED7450421863C21B008EB262 /* SDL2_net.framework */; };
 		ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED7450491863C584008EB262 /* ResourcePath.mm */; };
 		ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74504C1863C7A7008EB262 /* RenderManager.cpp */; };
+		ED91E669186F60C4002A4638 /* ColeTileset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E667186F60C4002A4638 /* ColeTileset.cpp */; };
+		ED91E66C186F6414002A4638 /* StrToInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E66A186F6414002A4638 /* StrToInt.cpp */; };
+		ED91E66E186F6996002A4638 /* tileset.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED91E66D186F6996002A4638 /* tileset.txt */; };
 		EDB2BCE3186A4F25003AB337 /* tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = EDB2BCE2186A4F25003AB337 /* tileset.png */; };
+		EDB2BCE6186A584C003AB337 /* ColeTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */; };
+		EDDA4701188335D900C13E4E /* servermain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED62B848188222D30046BD5E /* servermain.cpp */; };
+		EDDA47021883362C00C13E4E /* SDL2_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450421863C21B008EB262 /* SDL2_net.framework */; };
+		EDDA47031883362C00C13E4E /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450371863BF7C008EB262 /* SDL2.framework */; };
+		EDDA47081883375E00C13E4E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDA47061883375E00C13E4E /* Player.cpp */; };
+		EDDA4709188337A300C13E4E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDA47061883375E00C13E4E /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		ED62B83D188222A40046BD5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ED7450391863C089008EB262 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED62B839188222320046BD5E /* StrToInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrToInt.h; sourceTree = "<group>"; };
+		ED62B83F188222A40046BD5E /* MMO_Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MMO_Server; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED62B848188222D30046BD5E /* servermain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servermain.cpp; sourceTree = "<group>"; };
 		ED7450001863BE3C008EB262 /* MMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7450031863BE3C008EB262 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ED7450061863BE3C008EB262 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -58,10 +79,28 @@
 		ED74504B1863C5A9008EB262 /* RealMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealMain.h; sourceTree = "<group>"; };
 		ED74504C1863C7A7008EB262 /* RenderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderManager.cpp; sourceTree = "<group>"; };
 		ED74504D1863C7A7008EB262 /* RenderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderManager.h; sourceTree = "<group>"; };
+		ED91E667186F60C4002A4638 /* ColeTileset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeTileset.cpp; sourceTree = "<group>"; };
+		ED91E668186F60C4002A4638 /* ColeTileset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeTileset.h; sourceTree = "<group>"; };
+		ED91E66A186F6414002A4638 /* StrToInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StrToInt.cpp; sourceTree = "<group>"; };
+		ED91E66D186F6996002A4638 /* tileset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tileset.txt; sourceTree = "<group>"; };
 		EDB2BCE2186A4F25003AB337 /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
+		EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeTexture.cpp; sourceTree = "<group>"; };
+		EDB2BCE5186A584C003AB337 /* ColeTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeTexture.h; sourceTree = "<group>"; };
+		EDDA47051883366D00C13E4E /* NetworkConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
+		EDDA47061883375E00C13E4E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		EDDA47071883375E00C13E4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED62B83C188222A40046BD5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDA47021883362C00C13E4E /* SDL2_net.framework in Frameworks */,
+				EDDA47031883362C00C13E4E /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED744FFD1863BE3C008EB262 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,9 +115,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED62B837188220960046BD5E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		ED62B83A1882225D0046BD5E /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				ED62B848188222D30046BD5E /* servermain.cpp */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
 		ED744FF71863BE3C008EB262 = {
 			isa = PBXGroup;
 			children = (
+				ED62B837188220960046BD5E /* Common */,
 				ED7450091863BE3C008EB262 /* MMO */,
 				ED7450021863BE3C008EB262 /* Frameworks */,
 				ED7450011863BE3C008EB262 /* Products */,
@@ -89,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7450001863BE3C008EB262 /* MMO.app */,
+				ED62B83F188222A40046BD5E /* MMO_Server */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +175,9 @@
 		ED7450091863BE3C008EB262 /* MMO */ = {
 			isa = PBXGroup;
 			children = (
-				ED74503B1863C0F3008EB262 /* Code */,
+				EDDA47041883365800C13E4E /* Common */,
+				ED62B83A1882225D0046BD5E /* Server */,
+				ED74503B1863C0F3008EB262 /* Client */,
 				EDB2BCE1186A4F1A003AB337 /* Resources */,
 				ED74500A1863BE3C008EB262 /* Supporting Files */,
 			);
@@ -139,28 +197,62 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ED74503B1863C0F3008EB262 /* Code */ = {
+		ED74503B1863C0F3008EB262 /* Client */ = {
 			isa = PBXGroup;
 			children = (
 				ED74504B1863C5A9008EB262 /* RealMain.h */,
 				ED74503C1863C115008EB262 /* RealMain.cpp */,
 				ED74504D1863C7A7008EB262 /* RenderManager.h */,
 				ED74504C1863C7A7008EB262 /* RenderManager.cpp */,
+				EDB2BCE5186A584C003AB337 /* ColeTexture.h */,
+				EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */,
+				ED91E668186F60C4002A4638 /* ColeTileset.h */,
+				ED91E667186F60C4002A4638 /* ColeTileset.cpp */,
+				ED62B839188222320046BD5E /* StrToInt.h */,
+				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
 			);
-			name = Code;
+			name = Client;
 			sourceTree = "<group>";
 		};
 		EDB2BCE1186A4F1A003AB337 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				EDB2BCE2186A4F25003AB337 /* tileset.png */,
+				ED91E66D186F6996002A4638 /* tileset.txt */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDDA47041883365800C13E4E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EDDA47051883366D00C13E4E /* NetworkConstants.h */,
+				EDDA47071883375E00C13E4E /* Player.h */,
+				EDDA47061883375E00C13E4E /* Player.cpp */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ED62B83E188222A40046BD5E /* MMO_Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED62B845188222A40046BD5E /* Build configuration list for PBXNativeTarget "MMO_Server" */;
+			buildPhases = (
+				ED62B83B188222A40046BD5E /* Sources */,
+				ED62B83C188222A40046BD5E /* Frameworks */,
+				ED62B83D188222A40046BD5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMO_Server;
+			productName = MMO_Server;
+			productReference = ED62B83F188222A40046BD5E /* MMO_Server */;
+			productType = "com.apple.product-type.tool";
+		};
 		ED744FFF1863BE3C008EB262 /* MMO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED7450311863BE3C008EB262 /* Build configuration list for PBXNativeTarget "MMO" */;
@@ -202,6 +294,7 @@
 			projectRoot = "";
 			targets = (
 				ED744FFF1863BE3C008EB262 /* MMO */,
+				ED62B83E188222A40046BD5E /* MMO_Server */,
 			);
 		};
 /* End PBXProject section */
@@ -214,17 +307,31 @@
 				ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */,
 				ED7450141863BE3C008EB262 /* Credits.rtf in Resources */,
 				EDB2BCE3186A4F25003AB337 /* tileset.png in Resources */,
+				ED91E66E186F6996002A4638 /* tileset.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED62B83B188222A40046BD5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDA4709188337A300C13E4E /* Player.cpp in Sources */,
+				EDDA4701188335D900C13E4E /* servermain.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED744FFC1863BE3C008EB262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDA47081883375E00C13E4E /* Player.cpp in Sources */,
 				ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */,
+				ED91E669186F60C4002A4638 /* ColeTileset.cpp in Sources */,
+				EDB2BCE6186A584C003AB337 /* ColeTexture.cpp in Sources */,
+				ED91E66C186F6414002A4638 /* StrToInt.cpp in Sources */,
 				ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */,
 				ED74503E1863C115008EB262 /* RealMain.cpp in Sources */,
 				ED7450101863BE3C008EB262 /* main.cpp in Sources */,
@@ -253,6 +360,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ED62B846188222A40046BD5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED62B847188222A40046BD5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		ED74502F1863BE3C008EB262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -360,6 +493,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED62B845188222A40046BD5E /* Build configuration list for PBXNativeTarget "MMO_Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED62B846188222A40046BD5E /* Debug */,
+				ED62B847188222A40046BD5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED744FFB1863BE3C008EB262 /* Build configuration list for PBXProject "MMO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

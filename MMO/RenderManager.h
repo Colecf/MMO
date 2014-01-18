@@ -9,13 +9,16 @@
 #ifndef __MMO__RenderManager__
 #define __MMO__RenderManager__
 
-#include <iostream>
 #include <SDL2/SDL.h>
+#include <iostream>
 
 class RenderManager
 {
 public:
     SDL_Surface* loadSurface(std::string path);
+    SDL_Texture* loadTexture(std::string path, int* width, int* height);
+    SDL_Texture* loadTexture(std::string path);
+    void clearScreen();
     void updateScreen();
     void init(SDL_Window* window);
     void cleanup();
@@ -26,7 +29,7 @@ public:
             instance = new RenderManager();
         return instance;
     }
-    SDL_Surface *screen;
+    SDL_Renderer *renderer;
 private:
     RenderManager() {};
     RenderManager(RenderManager const&);  // Don't Implement
