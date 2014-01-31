@@ -18,6 +18,8 @@ public:
     SDL_Surface* loadSurface(std::string path);
     SDL_Texture* loadTexture(std::string path, int* width, int* height);
     SDL_Texture* loadTexture(std::string path);
+    SDL_Texture* createTextureFromSurface(SDL_Surface* surface);
+    SDL_Surface* createSDLSurface(int width, int height);
     void clearScreen();
     void updateScreen();
     void init(SDL_Window* window);

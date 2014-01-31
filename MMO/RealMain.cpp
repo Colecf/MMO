@@ -6,21 +6,32 @@
 //  Copyright (c) 2013 Cole Faust. All rights reserved.
 //
 
-#include <SDL2/SDL.h>
 #include <iostream>
+#include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+#include <SDL2_ttf/SDL_ttf.h>
 #include "ResourcePath.h"
 #include "RealMain.h"
 #include "RenderManager.h"
 #include "ColeTexture.h"
 #include "ColeTileset.h"
 #include "Player.h"
+#include "ColeFontManager.h"
+#include "MainMenu.h"
+#include "ColeScene.h"
 
 int realMain(int argc, char * arg[])
 {
+    ColeScene::penX = 0;
+    ColeScene::penY = 0;
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0)
     {
         std::cout << "ERROR SDL_Init" << std::endl;
+        return 1;
+    }
+    if (TTF_Init()==-1)
+    {
+        std::cout << "ERROR TTF_Init()" << TTF_GetError() << std::endl;
         return 1;
     }
     int flags = IMG_INIT_JPG | IMG_INIT_PNG;
@@ -56,6 +67,8 @@ int realMain(int argc, char * arg[])
         exit(2);
     }
     
+    MainMenu *menu = new MainMenu();
+    
     bool quit = false;
     SDL_Event e;
     while(!quit)
@@ -75,15 +88,36 @@ int realMain(int argc, char * arg[])
                 SDLNet_TCP_Send(p.socket, msg, sizeof(msg)-2);
             }
         }
+        
+        while(SDLNet_CheckSockets(Player::PlayerSSet, 0) >= 1)
+        {
+            if (SDLNet_SocketReady(p.socket))
+            {
+                char letter;
+                if(SDLNet_TCP_Recv(p.socket, &letter, 1) < 1)
+                {
+                    std::cout << "Lost Connection to server!" << std::endl;
+                    quit = true;
+                    break;
+                }
+                p.networkMessage += letter;
+                if (letter == ';')
+                    std::cout << p.networkMessage;
+            }
+        }
+        
         render->clearScreen();
         for(int x=0; x<100; x++)
         {
             tileset.renderTile((x%10)*16, (x/10)*16, "grass2");
         }
+        
+        menu->render();
         render->updateScreen();
     }
     
     render->cleanup();
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
     return 0;

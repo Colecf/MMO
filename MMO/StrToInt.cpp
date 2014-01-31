@@ -16,7 +16,6 @@
 
 int strToInt(std::string s)
 {
-    
     std::stringstream ss;
     ss << s;
     int result;

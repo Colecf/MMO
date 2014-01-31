@@ -10,7 +10,6 @@
 #include <list>
 #include <SDL2/SDL.h>
 #include <SDL2_net/SDL_net.h>
-#include "NetworkConstants.h"
 #include "Player.h"
 
 bool run = true;
