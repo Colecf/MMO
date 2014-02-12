@@ -22,12 +22,12 @@ ColeFontManager::ColeFontManager()
     color = {0, 0, 0, 255};
 }
 
-ColeTexture* ColeFontManager::createTextTexture(std::string message)
+std::shared_ptr<ColeTexture> ColeFontManager::createTextTexture(std::string message)
 {
     if(!font)
         return NULL;
     SDL_Surface *surface = TTF_RenderText_Solid(font, message.c_str(), color);
-    ColeTexture *tex = new ColeTexture(surface);
+    std::shared_ptr<ColeTexture> tex = std::make_shared<ColeTexture>(surface);
     SDL_FreeSurface(surface);
     return tex;
 }

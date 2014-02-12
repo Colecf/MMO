@@ -10,6 +10,7 @@
 		ED49807C188B31100072D6A9 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49807B188B31100072D6A9 /* SDL2_ttf.framework */; };
 		ED49807F188B32C70072D6A9 /* ColeFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */; };
 		ED498083188B3E070072D6A9 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED498082188B3E070072D6A9 /* Vera.ttf */; };
+		ED5848CB18A08AED002C9AF2 /* FPSCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */; };
 		ED7450041863BE3C008EB262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450031863BE3C008EB262 /* Cocoa.framework */; };
 		ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED74500C1863BE3C008EB262 /* InfoPlist.strings */; };
 		ED7450101863BE3C008EB262 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74500F1863BE3C008EB262 /* main.cpp */; };
@@ -67,6 +68,8 @@
 		ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeFontManager.cpp; sourceTree = "<group>"; };
 		ED49807E188B32C70072D6A9 /* ColeFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeFontManager.h; sourceTree = "<group>"; };
 		ED498082188B3E070072D6A9 /* Vera.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vera.ttf; sourceTree = "<group>"; };
+		ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FPSCounter.cpp; sourceTree = "<group>"; };
+		ED5848CA18A08AED002C9AF2 /* FPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSCounter.h; sourceTree = "<group>"; };
 		ED62B839188222320046BD5E /* StrToInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrToInt.h; sourceTree = "<group>"; };
 		ED62B83F188222A40046BD5E /* MMO_Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MMO_Server; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED62B848188222D30046BD5E /* servermain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servermain.cpp; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				EDAF14FB18935AF400AB3953 /* MainMenu.cpp */,
 				EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */,
 				EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */,
+				ED5848CA18A08AED002C9AF2 /* FPSCounter.h */,
+				ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5848CB18A08AED002C9AF2 /* FPSCounter.cpp in Sources */,
 				EDDA47081883375E00C13E4E /* Player.cpp in Sources */,
 				ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */,
 				ED91E669186F60C4002A4638 /* ColeTileset.cpp in Sources */,

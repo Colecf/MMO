@@ -12,11 +12,12 @@
 #include <string>
 #include <SDL2_ttf/SDL_ttf.h>
 #include "ColeTexture.h"
+#include <memory>
 
 class ColeFontManager
 {
 public:
-    ColeTexture* createTextTexture(std::string message);
+    std::shared_ptr<ColeTexture> createTextTexture(std::string message);
     static ColeFontManager* getInstance()
     {
         static ColeFontManager* instance;

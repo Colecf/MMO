@@ -11,14 +11,15 @@
 #include "ColeFontManager.h"
 #include "ColeTextBox.h"
 #include <iostream>
+#include <memory>
 
 MainMenu::MainMenu()
 {
-    ColeTexture* title = ColeFontManager::getInstance()->createTextTexture("Cole's MMO Game!");
+    std::shared_ptr<ColeTexture> title = ColeFontManager::getInstance()->createTextTexture("Cole's MMO Game!");
     title->x = (640/3/2)-(title->getWidth()/2);
     std::cout << title->x << std::endl;
     addChild(title);
-    ColeTextBox *test = new ColeTextBox(100);
+    std::shared_ptr<ColeTextBox> test = std::make_shared<ColeTextBox>(100);
     test->x = 10;
     test->y = 20;
     addChild(test);

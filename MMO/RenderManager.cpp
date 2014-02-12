@@ -76,6 +76,15 @@ SDL_Surface* RenderManager::createSDLSurface(int width, int height)
     return SDL_CreateRGBSurface(0, width, height, 32, rmask, gmask, bmask, amask);
 }
 
+void RenderManager::scaleRenderer(float x, float y)
+{
+    scaleX = x;
+    scaleY = y;
+    SDL_RenderSetScale(renderer, x, y);
+}
+float RenderManager::getScaleX(){return scaleX;}
+float RenderManager::getScaleY(){return scaleY;}
+
 void RenderManager::clearScreen(){SDL_RenderClear(renderer);}
 void RenderManager::updateScreen(){SDL_RenderPresent(renderer);}
 

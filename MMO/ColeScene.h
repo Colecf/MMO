@@ -10,17 +10,23 @@
 #define __MMO__ColeScene__
 
 #include <list>
+#include <SDL2/SDL.h>
+#include <memory>
 
 class ColeScene
 {
 public:
     ColeScene();
     virtual void render();
-    void addChild(ColeScene* child);
+    virtual void onEvent(SDL_Event *e);
+    void addChild(std::shared_ptr<ColeScene> child);
+    void removeChild(std::shared_ptr<ColeScene> child);
+    SDL_Point getAbsoluteCoords();
     int x, y;
     static int penX, penY;
 private:
-    std::list<ColeScene*> children;
+    std::list<std::shared_ptr<ColeScene>> children;
+    ColeScene *parent;
 };
 
 #endif /* defined(__MMO__ColeScene__) */

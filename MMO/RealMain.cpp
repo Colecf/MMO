@@ -19,6 +19,8 @@
 #include "ColeFontManager.h"
 #include "MainMenu.h"
 #include "ColeScene.h"
+#include "FPSCounter.h"
+
 
 int realMain(int argc, char * arg[])
 {
@@ -46,7 +48,7 @@ int realMain(int argc, char * arg[])
     render->init(SDL_CreateWindow("SDL 2 window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                            640, 480,SDL_WINDOW_SHOWN));
     ColeTileset tileset(getResourcePath()+"tileset");
-    SDL_RenderSetScale(render->renderer, 3, 3);
+    render->scaleRenderer(3, 3);
     
     if(SDLNet_Init() == -1)
     {
@@ -67,25 +69,30 @@ int realMain(int argc, char * arg[])
         exit(2);
     }
     
-    MainMenu *menu = new MainMenu();
+    ColeScene *currentScene = new MainMenu();
+    
+    FPSCounter fps;
+    SDL_Delay(50);
+    fps.nextFrame();
     
     bool quit = false;
     SDL_Event e;
     while(!quit)
     {
+        fps.limitTo(60);
+        fps.nextFrame();
         while (SDL_PollEvent(&e) != 0)
         {
-            if (e.type == SDL_QUIT)
-                quit = true;
-            if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_0)
+            if (e.type == SDL_MOUSEBUTTONDOWN)
             {
-                
-                std::string message = "hello;";
-                char *msg = (char*)message.c_str();
-                std::cout << "Sending " << msg << std::endl;
-                //For some reason an extra 2 garbage characters
-                //are attached if you don't do the -2
-                SDLNet_TCP_Send(p.socket, msg, sizeof(msg)-2);
+                e.button.x /= render->getScaleX();
+                e.button.y /= render->getScaleY();
+            }
+            if (e.type == SDL_QUIT)
+            {
+                quit = true;
+            } else {
+                currentScene->onEvent(&e);
             }
         }
         
@@ -112,7 +119,7 @@ int realMain(int argc, char * arg[])
             tileset.renderTile((x%10)*16, (x/10)*16, "grass2");
         }
         
-        menu->render();
+        currentScene->render();
         render->updateScreen();
     }
     

@@ -20,6 +20,9 @@ public:
     SDL_Texture* loadTexture(std::string path);
     SDL_Texture* createTextureFromSurface(SDL_Surface* surface);
     SDL_Surface* createSDLSurface(int width, int height);
+    void scaleRenderer(float x, float y);
+    float getScaleX();
+    float getScaleY();
     void clearScreen();
     void updateScreen();
     void init(SDL_Window* window);
@@ -38,6 +41,8 @@ private:
     void operator=(RenderManager const&); // Don't implement
     
     SDL_Window *window;
+    float scaleX;
+    float scaleY;
 };
 
 #endif /* defined(__MMO__RenderManager__) */
