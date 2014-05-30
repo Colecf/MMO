@@ -18,6 +18,7 @@ class ColeTileset : public ColeTexture
 public:
     ColeTileset(std::string path);
     void renderTile(int x, int y, std::string tileName);
+    static std::shared_ptr<ColeTileset> loadedSet;
 protected:
     std::map<std::string, SDL_Rect> tileNames;
 };

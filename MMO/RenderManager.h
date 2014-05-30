@@ -23,6 +23,8 @@ public:
     void scaleRenderer(float x, float y);
     float getScaleX();
     float getScaleY();
+    int getScreenX();
+    int getScreenY();
     void clearScreen();
     void updateScreen();
     void init(SDL_Window* window);
@@ -43,6 +45,8 @@ private:
     SDL_Window *window;
     float scaleX;
     float scaleY;
+    int screenX = 640;
+    int screenY = 480;
 };
 
 #endif /* defined(__MMO__RenderManager__) */

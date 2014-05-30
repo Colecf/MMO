@@ -18,9 +18,12 @@ public:
     Player();
     ~Player();
     void setSocket(TCPsocket newSocket);
+    void move(int dx, int dy);
     std::string networkMessage;
     TCPsocket socket;
     static SDLNet_SocketSet PlayerSSet;
+    int x, y;
+    void sendNetworkMessage(std::string message);
 };
 
 #endif /* defined(__MMO__Player__) */

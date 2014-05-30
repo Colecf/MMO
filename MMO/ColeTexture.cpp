@@ -29,6 +29,7 @@ ColeTexture::ColeTexture(SDL_Surface *surface)
     height = surface->h;
     fullRect = {0, 0, width, height};
 }
+
 ColeTexture::~ColeTexture()
 {
     SDL_DestroyTexture(texture);

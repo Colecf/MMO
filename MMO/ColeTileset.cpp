@@ -10,6 +10,8 @@
 #include <fstream>
 #include "StrToInt.h"
 
+std::shared_ptr<ColeTileset> ColeTileset::loadedSet;
+
 int find_xth_of(std::string s, char c, int count)
 {
     int result = 0;
@@ -29,6 +31,8 @@ ColeTileset::ColeTileset(std::string path) : ColeTexture(path+".png")
     while (file.good())
     {
         getline(file, line);
+        if(line == "" || line.at(0) == '#') continue;
+        
         std::string name = line.substr(0, line.find(' '));
         
         if (name == "universalsize")

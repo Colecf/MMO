@@ -20,6 +20,7 @@
 #include "MainMenu.h"
 #include "ColeScene.h"
 #include "FPSCounter.h"
+#include "NetworkManager.h"
 
 
 int realMain(int argc, char * arg[])
@@ -43,33 +44,27 @@ int realMain(int argc, char * arg[])
         std::cout << "Error initing SDL_Image! " << IMG_GetError() << std::endl;
         return 2;
     }
-    
-    RenderManager *render = RenderManager::getInstance();
-    render->init(SDL_CreateWindow("SDL 2 window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                           640, 480,SDL_WINDOW_SHOWN));
-    ColeTileset tileset(getResourcePath()+"tileset");
-    render->scaleRenderer(3, 3);
-    
     if(SDLNet_Init() == -1)
     {
         std::cout << "ERROR SDLNet_Init: " << SDLNet_GetError() << std::endl;
         return 1;
     }
     
-    IPaddress ip;
-    if(SDLNet_ResolveHost(&ip,"127.0.0.1",9999)==-1) {
-        std::cout << "ERROR SDLNet_ResolveHost " << SDLNet_GetError() << std::endl;
-        return 1;
-    }
-    Player::PlayerSSet = SDLNet_AllocSocketSet(1);
-    Player p;
-    p.setSocket(SDLNet_TCP_Open(&ip));
-    if(!p.socket) {
-        printf("SDLNet_TCP_Open: %s\n", SDLNet_GetError());
-        exit(2);
-    }
+    RenderManager *render = RenderManager::getInstance();
+    render->init(SDL_CreateWindow("SDL 2 window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                                           640, 480,SDL_WINDOW_SHOWN));
+    ColeTileset::loadedSet = std::make_shared<ColeTileset>(getResourcePath()+"tileset");
+    render->scaleRenderer(3, 3);
     
-    ColeScene *currentScene = new MainMenu();
+    
+    
+    
+    Player::PlayerSSet = SDLNet_AllocSocketSet(1);
+    std::shared_ptr<Player> p = std::make_shared<Player>();
+    NetworkManager::getInstance()->setPlayer(p);
+    
+    
+    ColeScene::currentScene = std::make_shared<MainMenu>();
     
     FPSCounter fps;
     SDL_Delay(50);
@@ -92,34 +87,22 @@ int realMain(int argc, char * arg[])
             {
                 quit = true;
             } else {
-                currentScene->onEvent(&e);
+                ColeScene::currentScene->onEvent(&e);
             }
         }
         
-        while(SDLNet_CheckSockets(Player::PlayerSSet, 0) >= 1)
+        if (!NetworkManager::getInstance()->update())
         {
-            if (SDLNet_SocketReady(p.socket))
-            {
-                char letter;
-                if(SDLNet_TCP_Recv(p.socket, &letter, 1) < 1)
-                {
-                    std::cout << "Lost Connection to server!" << std::endl;
-                    quit = true;
-                    break;
-                }
-                p.networkMessage += letter;
-                if (letter == ';')
-                    std::cout << p.networkMessage;
-            }
+            quit = true;
         }
         
         render->clearScreen();
         for(int x=0; x<100; x++)
         {
-            tileset.renderTile((x%10)*16, (x/10)*16, "grass2");
+            ColeTileset::loadedSet->renderTile((x%10)*16, (x/10)*16, "grass2");
         }
         
-        currentScene->render();
+        ColeScene::currentScene->render();
         render->updateScreen();
     }
     

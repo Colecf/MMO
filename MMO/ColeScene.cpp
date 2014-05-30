@@ -10,6 +10,7 @@
 
 int ColeScene::penX;
 int ColeScene::penY;
+std::shared_ptr<ColeScene> ColeScene::currentScene;
 
 ColeScene::ColeScene()
 {

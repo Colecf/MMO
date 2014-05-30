@@ -16,6 +16,7 @@
 class ColeScene
 {
 public:
+    static std::shared_ptr<ColeScene> currentScene;
     ColeScene();
     virtual void render();
     virtual void onEvent(SDL_Event *e);

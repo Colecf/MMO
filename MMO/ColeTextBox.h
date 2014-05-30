@@ -20,6 +20,7 @@ public:
     ColeTextBox(int width);
     std::string containedText;
     virtual void onEvent(SDL_Event *e);
+    bool enabled;
 private:
     int cursorPos;
     void redisplay();

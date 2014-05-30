@@ -14,6 +14,7 @@
 
 ColeTextBox::ColeTextBox(int width)
 {
+    enabled = true;
     cursorPos = 0;
     active = false;
     int height = 20;
@@ -48,27 +49,28 @@ void ColeTextBox::redisplay()
 void ColeTextBox::onEvent(SDL_Event *e)
 {
     ColeScene::onEvent(e);
+    if (!enabled)
+    {
+        return;
+    }
     if (e->type == SDL_MOUSEBUTTONDOWN && e->button.button == SDL_BUTTON_LEFT)
     {
         SDL_Point coords = getAbsoluteCoords();
         if (e->button.x >= coords.x && e->button.y >= coords.y && e->button.x <= coords.x+rect.w
             && e->button.y <= coords.y+rect.h && !active)
         {
-            std::cout << "Started text" << std::endl;
             active = true;
             SDL_StartTextInput();
             SDL_SetTextInputRect(&rect);
         } else if ((e->button.x < coords.x || e->button.y < coords.y || e->button.x > coords.x+rect.w
                    || e->button.y > coords.y+rect.h) && active)
         {
-            std::cout << "Stopped text" << std::endl;
             active = false;
             SDL_StopTextInput();
         }
     }
     if (e->type == SDL_TEXTINPUT && active)
     {
-        std::cout << e->edit.text << std::endl;
         containedText += e->edit.text;
         cursorPos++;
         redisplay();

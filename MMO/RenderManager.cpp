@@ -84,6 +84,8 @@ void RenderManager::scaleRenderer(float x, float y)
 }
 float RenderManager::getScaleX(){return scaleX;}
 float RenderManager::getScaleY(){return scaleY;}
+int RenderManager::getScreenX(){return screenX;}
+int RenderManager::getScreenY(){return screenY;}
 
 void RenderManager::clearScreen(){SDL_RenderClear(renderer);}
 void RenderManager::updateScreen(){SDL_RenderPresent(renderer);}

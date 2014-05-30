@@ -12,6 +12,7 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include "ColeScene.h"
+#include <memory>
 
 class ColeTexture : public ColeScene
 {

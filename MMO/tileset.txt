@@ -11,3 +11,6 @@ blank = 0 80
 grass1 = 16 80
 grass2 = 32 80
 grass3 = 48 80
+knight = 80 304
+
+mage = 304 0

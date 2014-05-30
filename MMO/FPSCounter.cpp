@@ -53,7 +53,7 @@ void FPSCounter::limitTo(int fps)
     //ticks per frame
     tpf *= 1000;
     
-    std::cout << "FPS: "<< getFPS() << " TickAverage: " << tickAverage << std::endl;
+    //std::cout << "FPS: "<< getFPS() << " TickAverage: " << tickAverage << std::endl;
     
     int i = tickindex-1;
     if (i < 0)
@@ -62,7 +62,7 @@ void FPSCounter::limitTo(int fps)
     }
     if (tickAverage < tpf)
     {
-        std::cout << "wait: " << ceil(tpf-tickAverage) << std::endl;
+        //std::cout << "wait: " << ceil(tpf-tickAverage) << std::endl;
         SDL_Delay(ceil(tpf-tickAverage));
     }
 }
