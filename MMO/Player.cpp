@@ -11,6 +11,7 @@
 
 void Player::sendNetworkMessage(std::string message)
 {
+    std::cout << "Sent: " << message << std::endl;
     SDLNet_TCP_Send(socket, message.c_str(), (int)strlen(message.c_str()));
 }
 
@@ -21,18 +22,64 @@ SDLNet_SocketSet Player::PlayerSSet;
 Player::Player()
 {
     networkMessage = "";
+    name = "";
     socket = NULL;
     x = y = 0;
 }
 
 Player::~Player()
 {
-    std::cout << "Destroying Player!" << std::endl;
     if (socket != NULL)
     {
         SDLNet_DelSocket(PlayerSSet, (SDLNet_GenericSocket)socket);
         SDLNet_TCP_Close(socket);
     }
+}
+
+std::string Player::connectToServer(std::string server)
+{
+    IPaddress serverIP;
+    
+    if(SDLNet_ResolveHost(&serverIP, server.c_str(), 9999)==-1) {
+        std::cout << "ERROR SDLNet_ResolveHost " << SDLNet_GetError() << std::endl;
+        return SDLNet_GetError();
+    }
+    
+    setSocket(SDLNet_TCP_Open(&serverIP));
+    if(!socket) {
+        std::cout << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
+        return SDLNet_GetError();
+    }
+    
+    return "";
+}
+
+std::string Player::clientNetworkUpdate()
+{
+    if (!socket)
+        return "";
+    
+    while(SDLNet_CheckSockets(Player::PlayerSSet, 0) >= 1)
+    {
+        if (SDLNet_SocketReady(socket))
+        {
+            char letter;
+            if(SDLNet_TCP_Recv(socket, &letter, 1) < 1)
+            {
+                std::cout << "Lost Connection to server!" << std::endl;
+                return "ERROR";
+            }
+            networkMessage += letter;
+            if (letter == ';')
+            {
+                std::cout << networkMessage << std::endl;
+                std::string toRet = networkMessage;
+                networkMessage = "";
+                return toRet;
+            }
+        }
+    }
+    return "";
 }
 
 void Player::setSocket(TCPsocket newSocket)
@@ -46,6 +93,7 @@ void Player::move(int dx, int dy)
     x += dx;
     y += dy;
     
-    std::string message = "move:"+std::to_string(x)+","+std::to_string(y)+";";
+    std::string message = "move:"+std::to_string(x)+"§"+std::to_string(y)+";";
+    
     sendNetworkMessage(message);
 }

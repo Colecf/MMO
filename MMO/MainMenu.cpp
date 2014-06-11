@@ -21,20 +21,23 @@ MainMenu::MainMenu()
     addChild(title);
     serverIPBox = std::make_shared<ColeTextBox>(100);
     serverIPBox->x = 10;
-    serverIPBox->y = 20;
+    serverIPBox->y = 50;
     addChild(serverIPBox);
+    nameBox = std::make_shared<ColeTextBox>(100);
+    nameBox->x = 10;
+    nameBox->y = 20;
+    addChild(nameBox);
 }
 
 void MainMenu::onEvent(SDL_Event *e)
 {
     ColeScene::onEvent(e);
     
-    if (e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN && serverIPBox->containedText.length()>0)
+    if (e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN && serverIPBox->containedText.length()>0 && nameBox->containedText.length()>0)
     {
         std::cout << "Enter" << std::endl;
-        serverIPBox->enabled = false;
-        std::string result = NetworkManager::getInstance()->connect(serverIPBox->containedText);
-        serverIPBox->enabled = true;
+        std::shared_ptr<Player> p = std::make_shared<Player>();
+        std::string result = p->connectToServer(serverIPBox->containedText);
         std::cout << result << std::endl;
         if (result != "")
         {
@@ -43,7 +46,7 @@ void MainMenu::onEvent(SDL_Event *e)
             errormsg->y = serverIPBox->y - 50;
             addChild(errormsg);
         } else {
-            ColeScene::currentScene = std::make_shared<GameScene>();
+            ColeScene::currentScene = std::make_shared<GameScene>(nameBox->containedText, p);
         }
     }
 }

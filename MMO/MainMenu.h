@@ -21,6 +21,7 @@ public:
     virtual void onEvent(SDL_Event *e);
 private:
     std::shared_ptr<ColeTextBox> serverIPBox;
+    std::shared_ptr<ColeTextBox> nameBox;
 };
 
 #endif /* defined(__MMO__MainMenu__) */

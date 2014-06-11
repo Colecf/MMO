@@ -11,6 +11,7 @@
 		ED49807F188B32C70072D6A9 /* ColeFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */; };
 		ED498083188B3E070072D6A9 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED498082188B3E070072D6A9 /* Vera.ttf */; };
 		ED5848CB18A08AED002C9AF2 /* FPSCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */; };
+		ED6CF50C194818A9006B0CF8 /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED49807B188B31100072D6A9 /* SDL2_ttf.framework */; };
 		ED7450041863BE3C008EB262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450031863BE3C008EB262 /* Cocoa.framework */; };
 		ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED74500C1863BE3C008EB262 /* InfoPlist.strings */; };
 		ED7450101863BE3C008EB262 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74500F1863BE3C008EB262 /* main.cpp */; };
@@ -38,6 +39,8 @@
 		EDDA47031883362C00C13E4E /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450371863BF7C008EB262 /* SDL2.framework */; };
 		EDDA47081883375E00C13E4E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDA47061883375E00C13E4E /* Player.cpp */; };
 		EDDA4709188337A300C13E4E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDA47061883375E00C13E4E /* Player.cpp */; };
+		EDDCB57C19468D600066EAB8 /* OtherPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */; };
+		EDDCB57D194693000066EAB8 /* StrToInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E66A186F6414002A4638 /* StrToInt.cpp */; };
 		EDDDC0B2189B6E3100E478CB /* ColeTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ED6CF50C194818A9006B0CF8 /* SDL2_ttf.framework in CopyFiles */,
 				ED7450441863C21F008EB262 /* SDL2_net.framework in CopyFiles */,
 				ED7450411863C1EC008EB262 /* SDL2_image.framework in CopyFiles */,
 				ED74503A1863C093008EB262 /* SDL2.framework in CopyFiles */,
@@ -111,6 +115,8 @@
 		EDC0321218CBB1C100D6F995 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		EDDA47061883375E00C13E4E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		EDDA47071883375E00C13E4E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OtherPlayer.cpp; sourceTree = "<group>"; };
+		EDDCB57B19468D600066EAB8 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPlayer.h; sourceTree = "<group>"; };
 		EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeTextBox.cpp; sourceTree = "<group>"; };
 		EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeTextBox.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,8 +242,6 @@
 				EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */,
 				ED91E668186F60C4002A4638 /* ColeTileset.h */,
 				ED91E667186F60C4002A4638 /* ColeTileset.cpp */,
-				ED62B839188222320046BD5E /* StrToInt.h */,
-				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
 				ED49807E188B32C70072D6A9 /* ColeFontManager.h */,
 				ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */,
 				EDAF14FC18935AF400AB3953 /* MainMenu.h */,
@@ -250,6 +254,8 @@
 				EDB2444518AB3C5800995986 /* NetworkManager.cpp */,
 				EDC0321218CBB1C100D6F995 /* GameScene.h */,
 				EDC0321118CBB1C100D6F995 /* GameScene.cpp */,
+				EDDCB57B19468D600066EAB8 /* OtherPlayer.h */,
+				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -267,6 +273,8 @@
 		EDDA47041883365800C13E4E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ED62B839188222320046BD5E /* StrToInt.h */,
+				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
 				EDDA47071883375E00C13E4E /* Player.h */,
 				EDDA47061883375E00C13E4E /* Player.cpp */,
 			);
@@ -360,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDA4709188337A300C13E4E /* Player.cpp in Sources */,
+				EDDCB57D194693000066EAB8 /* StrToInt.cpp in Sources */,
 				EDDA4701188335D900C13E4E /* servermain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +392,7 @@
 				EDDDC0B2189B6E3100E478CB /* ColeTextBox.cpp in Sources */,
 				ED7450101863BE3C008EB262 /* main.cpp in Sources */,
 				EDAF14FA1893591F00AB3953 /* ColeScene.cpp in Sources */,
+				EDDCB57C19468D600066EAB8 /* OtherPlayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

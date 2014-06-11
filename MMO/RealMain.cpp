@@ -55,14 +55,8 @@ int realMain(int argc, char * arg[])
                                            640, 480,SDL_WINDOW_SHOWN));
     ColeTileset::loadedSet = std::make_shared<ColeTileset>(getResourcePath()+"tileset");
     render->scaleRenderer(3, 3);
-    
-    
-    
-    
+
     Player::PlayerSSet = SDLNet_AllocSocketSet(1);
-    std::shared_ptr<Player> p = std::make_shared<Player>();
-    NetworkManager::getInstance()->setPlayer(p);
-    
     
     ColeScene::currentScene = std::make_shared<MainMenu>();
     
@@ -89,11 +83,6 @@ int realMain(int argc, char * arg[])
             } else {
                 ColeScene::currentScene->onEvent(&e);
             }
-        }
-        
-        if (!NetworkManager::getInstance()->update())
-        {
-            quit = true;
         }
         
         render->clearScreen();

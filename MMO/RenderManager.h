@@ -25,6 +25,8 @@ public:
     float getScaleY();
     int getScreenX();
     int getScreenY();
+    int getScaledScreenX();
+    int getScaledScreenY();
     void clearScreen();
     void updateScreen();
     void init(SDL_Window* window);

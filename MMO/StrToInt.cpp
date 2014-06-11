@@ -25,9 +25,7 @@ int strToInt(std::string s)
 
 std::string intToStr(int i)
 {
-    std::stringstream ss;
-    ss << i;
-    return ss.str();
+    return std::to_string(i);
 }
 
 #endif

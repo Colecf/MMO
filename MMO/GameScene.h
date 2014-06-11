@@ -12,16 +12,20 @@
 #include "ColeScene.h"
 #include "Player.h"
 #include "ColeTexture.h"
+#include "OtherPlayer.h"
+#include <list>
 
 class GameScene : public ColeScene
 {
 public:
-    GameScene();
+    GameScene(std::string name, std::shared_ptr<Player> thePlayer);
     virtual void onEvent(SDL_Event *e);
     virtual void render();
 private:
-    int psx, psy; //Player sprite x and y
+    OtherPlayer* getOtherPlayerByName(std::string name);
+    int scx, scy; //Screen center x and y
     std::shared_ptr<Player> p;
+    std::list<OtherPlayer*> otherPlayers;
 };
 
 #endif /* defined(__MMO__GameScene__) */
