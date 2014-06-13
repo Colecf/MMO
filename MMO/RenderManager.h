@@ -9,7 +9,7 @@
 #ifndef __MMO__RenderManager__
 #define __MMO__RenderManager__
 
-#include <SDL2/SDL.h>
+#include "SDL2.h"
 #include <iostream>
 
 class RenderManager

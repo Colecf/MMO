@@ -10,7 +10,6 @@
 #define __MMO__ColeTexture__
 
 #include <string>
-#include <SDL2/SDL.h>
 #include "ColeScene.h"
 #include <memory>
 

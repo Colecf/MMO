@@ -12,8 +12,8 @@
 ColeTexture::ColeTexture()
 {
     texture = NULL;
-    x = NULL;
-    y = NULL;
+    x = 0;
+    y = 0;
     fullRect = {0, 0, 0, 0};
 }
 

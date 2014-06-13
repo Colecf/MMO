@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <string>
-#include <SDL2_net/SDL_net.h>
+#include "SDL2_net.h"
 #include "Player.h"
 #include "GameScene.h"
 

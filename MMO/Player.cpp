@@ -7,16 +7,19 @@
 //
 
 #include "Player.h"
+#include "StrToInt.h"
 #include <iostream>
 
 void Player::sendNetworkMessage(std::string message)
 {
     std::cout << "Sent: " << message << std::endl;
-    SDLNet_TCP_Send(socket, message.c_str(), (int)strlen(message.c_str()));
+    
+    //The enabled one also works, but mingw apparently doesn't have strlen
+    //Disabled one was the origional
+    //SDLNet_TCP_Send(socket, message.c_str(), (int)strlen(message.c_str()));
+    SDLNet_TCP_Send(socket, message.c_str(), (int)message.length());
 }
 
-//std::string Player::networkMessage;
-//TCPsocket Player::socket;
 SDLNet_SocketSet Player::PlayerSSet;
 
 Player::Player()
@@ -93,7 +96,7 @@ void Player::move(int dx, int dy)
     x += dx;
     y += dy;
     
-    std::string message = "move:"+std::to_string(x)+"§"+std::to_string(y)+";";
+    std::string message = "move:"+intToStr(x)+"§"+intToStr(y)+";";
     
     sendNetworkMessage(message);
 }

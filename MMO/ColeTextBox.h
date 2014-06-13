@@ -10,7 +10,6 @@
 #define __MMO__ColeTextBox__
 
 #include <iostream>
-#include <SDL2/SDL.h>
 #include "ColeScene.h"
 #include "ColeTexture.h"
 

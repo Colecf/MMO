@@ -70,6 +70,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED222A7A19492F9A00DE1F8C /* ResourcePath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResourcePath.cpp; sourceTree = "<group>"; };
+		ED222A7B19492FD500DE1F8C /* wincomp.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = wincomp.sh; sourceTree = "<group>"; };
+		ED222C00194934AE00DE1F8C /* SDL2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2.h; sourceTree = "<group>"; };
+		ED222C01194934CA00DE1F8C /* SDL2_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL2_net.h; sourceTree = "<group>"; };
+		ED222C02194934F600DE1F8C /* SDL2_ttf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_ttf.h; sourceTree = "<group>"; };
+		ED222C031949350000DE1F8C /* SDL2_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL2_image.h; sourceTree = "<group>"; };
 		ED49807B188B31100072D6A9 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeFontManager.cpp; sourceTree = "<group>"; };
 		ED49807E188B32C70072D6A9 /* ColeFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeFontManager.h; sourceTree = "<group>"; };
@@ -146,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED222A7919492F7D00DE1F8C /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				ED222A7B19492FD500DE1F8C /* wincomp.sh */,
+				ED222A7A19492F9A00DE1F8C /* ResourcePath.cpp */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
 		ED62B837188220960046BD5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +222,7 @@
 		ED7450091863BE3C008EB262 /* MMO */ = {
 			isa = PBXGroup;
 			children = (
+				ED222A7919492F7D00DE1F8C /* Windows */,
 				EDDA47041883365800C13E4E /* Common */,
 				ED62B83A1882225D0046BD5E /* Server */,
 				ED74503B1863C0F3008EB262 /* Client */,
@@ -273,6 +289,10 @@
 		EDDA47041883365800C13E4E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ED222C00194934AE00DE1F8C /* SDL2.h */,
+				ED222C01194934CA00DE1F8C /* SDL2_net.h */,
+				ED222C02194934F600DE1F8C /* SDL2_ttf.h */,
+				ED222C031949350000DE1F8C /* SDL2_image.h */,
 				ED62B839188222320046BD5E /* StrToInt.h */,
 				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
 				EDDA47071883375E00C13E4E /* Player.h */,

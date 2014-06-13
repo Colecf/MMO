@@ -9,7 +9,7 @@
 #ifndef __MMO__Player__
 #define __MMO__Player__
 
-#include <SDL2_net/SDL_net.h>
+#include "SDL2_net.h"
 #include <string>
 
 class Player

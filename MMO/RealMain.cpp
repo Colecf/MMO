@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
-#include <SDL2/SDL.h>
-#include <SDL2_image/SDL_image.h>
-#include <SDL2_ttf/SDL_ttf.h>
+#include "SDL2.h"
+#include "SDL2_image.h"
+#include "SDL2_ttf.h"
 #include "ResourcePath.h"
 #include "RealMain.h"
 #include "RenderManager.h"
@@ -51,7 +51,7 @@ int realMain(int argc, char * arg[])
     }
     
     RenderManager *render = RenderManager::getInstance();
-    render->init(SDL_CreateWindow("SDL 2 window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+    render->init(SDL_CreateWindow("Cole's Multiplayer Game!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                            640, 480,SDL_WINDOW_SHOWN));
     ColeTileset::loadedSet = std::make_shared<ColeTileset>(getResourcePath()+"tileset");
     render->scaleRenderer(3, 3);

@@ -10,7 +10,7 @@
 #define __MMO__ColeFontManager__
 
 #include <string>
-#include <SDL2_ttf/SDL_ttf.h>
+#include "SDL2_ttf.h"
 #include "ColeTexture.h"
 #include <memory>
 

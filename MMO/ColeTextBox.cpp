@@ -8,7 +8,6 @@
 
 #include "ColeTextBox.h"
 #include "RenderManager.h"
-
 #include "ColeFontManager.h"
 #include <iostream>
 
@@ -75,7 +74,7 @@ void ColeTextBox::onEvent(SDL_Event *e)
         cursorPos++;
         redisplay();
     }
-    if (e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_BACKSPACE && containedText.length()>0)
+    if (e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_BACKSPACE && containedText.length()>0 && active)
     {
         containedText = containedText.substr(0, containedText.length()-1);
         cursorPos--;

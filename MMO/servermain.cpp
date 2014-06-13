@@ -8,8 +8,8 @@
 
 #include <iostream>
 #include <list>
-#include <SDL2/SDL.h>
-#include <SDL2_net/SDL_net.h>
+#include "SDL2.h"
+#include "SDL2_net.h"
 #include "Player.h"
 #include "StrToInt.h"
 #include <vector>

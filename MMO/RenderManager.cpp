@@ -7,7 +7,7 @@
 //
 
 #include "RenderManager.h"
-#include <SDL2_image/SDL_image.h>
+#include "SDL2_image.h"
 
 
 SDL_Surface* RenderManager::loadSurface(std::string path)
@@ -15,7 +15,7 @@ SDL_Surface* RenderManager::loadSurface(std::string path)
 	SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
 	if( loadedSurface == NULL )
 	{
-		printf( "Unable to load image %s! SDL_image Error: %s\n", path.substr(path.find_last_of('/')).c_str(), IMG_GetError() );
+        std::cout << "Unable to load image " << path.substr(path.find_last_of('/')) << "! SDL_image Error: " << IMG_GetError() << std::endl;
         return NULL;
 	}
     
@@ -29,7 +29,7 @@ SDL_Texture* RenderManager::loadTexture(std::string path, int* width, int* heigh
 	SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
 	if( loadedSurface == NULL )
 	{
-		printf( "Unable to load image %s! SDL_image Error: %s\n", path.substr(path.find_last_of('/')).c_str(), IMG_GetError() );
+		std::cout << "Unable to load image " << path.substr(path.find_last_of('/')) << "! SDL_image Error: " << IMG_GetError() << std::endl;
         return NULL;
 	}
 	else
@@ -40,7 +40,7 @@ SDL_Texture* RenderManager::loadTexture(std::string path, int* width, int* heigh
         SDL_FreeSurface( loadedSurface );
 		if( texture == NULL )
 		{
-			printf( "Unable to optimize image %s! SDL Error: %s\n", path.substr(path.find_last_of('/')).c_str(), SDL_GetError() );
+            std::cout << "Unable to optimize image " << path.substr(path.find_last_of('/')) << "! SDL Error: " << SDL_GetError() << std::endl;
             return NULL;
 		}
 	}
