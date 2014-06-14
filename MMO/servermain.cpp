@@ -8,11 +8,14 @@
 
 #include <iostream>
 #include <list>
+#include <vector>
+#include <stdlib.h>  //rand
+#include <time.h>
 #include "SDL2.h"
 #include "SDL2_net.h"
 #include "Player.h"
 #include "StrToInt.h"
-#include <vector>
+#include "WorldServer.h"
 
 bool run = true;
 
@@ -46,6 +49,8 @@ public:
             std::cout << "ERROR SDLNet_TCP_Open " << SDLNet_GetError() << std::endl;
             return false;
         }
+        
+        w.generate();
         return true;
     }
     void run()
@@ -71,9 +76,9 @@ public:
                         if(SDLNet_TCP_Recv((*it)->socket, &letter, 1) < 1)
                         {
                             std::cout << "Player disconnecting! " << (*it)->name << std::endl;
-                            broadcast("leave:"+(*it)->name+";");
                             delete *it;
                             clients.erase(it);
+                            broadcast("leave:"+(*it)->name+";");
                             continue;
                         }
                         (*it)->networkMessage += letter;
@@ -100,6 +105,8 @@ public:
             p->sendNetworkMessage("join:"+(*it)->name+"§"+intToStr((*it)->x)+"§"+intToStr((*it)->y)+"§"+intToStr((*it)->gameClass)+";");
         }
     }
+    
+    World w;
 private:
     std::list<Player*> clients;
     TCPsocket serverSocket;
@@ -139,7 +146,8 @@ void handleMessage(Player* p)
         p->name = arguments[0];
         p->gameClass = strToInt(arguments[1]);
         s.informOfCurrentPlayers(p);
-        s.broadcast("join:"+arguments[0]+"§0§0§"+arguments[1]+";"); //Join:name§x§y§class
+        p->sendNetworkMessage(s.w.getNetworkMessage());
+        s.broadcast("join:"+arguments[0]+"§"+intToStr(p->x)+"§"+intToStr(p->y)+"§"+arguments[1]+";"); //Join:name§x§y§class
         std::cout << "New player joined named " << p->name << " with class " << p->gameClass << std::endl;
     }
     
@@ -164,6 +172,7 @@ int keyboardThread(void* data)
 
 int main(int argc, const char * argv[])
 {
+    srand(time(NULL));
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0)
     {
         std::cout << "ERROR SDL_Init: " << SDL_GetError() << std::endl;

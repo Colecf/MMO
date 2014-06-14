@@ -19,6 +19,7 @@ public:
     static std::shared_ptr<ColeScene> currentScene;
     ColeScene();
     virtual void render();
+    virtual void update();
     virtual void onEvent(SDL_Event *e);
     void addChild(std::shared_ptr<ColeScene> child);
     void removeChild(std::shared_ptr<ColeScene> child);

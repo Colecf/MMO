@@ -20,9 +20,9 @@ public:
     std::string containedText;
     virtual void onEvent(SDL_Event *e);
     bool enabled;
+    void redisplay();
 private:
     int cursorPos;
-    void redisplay();
     bool active;
     SDL_Rect rect;
     std::shared_ptr<ColeTexture> textTexture;

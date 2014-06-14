@@ -23,8 +23,8 @@ void OtherPlayer::render()
     
     int scx = RenderManager::getInstance()->getScaledScreenX()/2-8;
     int scy = RenderManager::getInstance()->getScaledScreenY()/2-8;
-    ColeTileset::loadedSet->renderTile(x+scx, y+scy, 190+gameClass);
-    nameTexture->render(x+scx, y+scy+10);
+    ColeTileset::loadedSet->renderTile(x, y, 190+gameClass);
+    nameTexture->render(x, y+10);
 }
 
 std::string OtherPlayer::getName(){return name;}

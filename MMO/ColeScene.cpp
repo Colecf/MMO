@@ -29,6 +29,13 @@ void ColeScene::render()
     penY -= y;
 }
 
+void ColeScene::update()
+{
+    std::list<std::shared_ptr<ColeScene>>::iterator it;
+    for (it = children.begin(); it != children.end(); it++)
+        (*it)->update();
+}
+
 void ColeScene::onEvent(SDL_Event *e)
 {
     std::list<std::shared_ptr<ColeScene>>::iterator it;

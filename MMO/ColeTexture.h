@@ -30,6 +30,7 @@ protected:
     SDL_Texture *texture;
     SDL_Rect fullRect;
     int width, height;
+    double angle;
 };
 
 #endif /* defined(__MMO__ColeTexture__) */

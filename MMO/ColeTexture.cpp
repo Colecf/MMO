@@ -14,6 +14,7 @@ ColeTexture::ColeTexture()
     texture = NULL;
     x = 0;
     y = 0;
+    angle = 0;
     fullRect = {0, 0, 0, 0};
 }
 
@@ -35,8 +36,14 @@ ColeTexture::~ColeTexture()
     SDL_DestroyTexture(texture);
 }
 
-void ColeTexture::render() { render(x, y); };
-void ColeTexture::render(SDL_Rect clip) { render(x, y, clip); };
+void ColeTexture::render()
+{
+    int tempx = x+ColeScene::penX;
+    int tempy = y+ColeScene::penY;
+    SDL_Rect dstrect = {tempx, tempy, width, height};
+    SDL_RenderCopyEx(RenderManager::getInstance()->renderer, texture, &fullRect, &dstrect, angle, NULL, SDL_FLIP_NONE);
+}
+void ColeTexture::render(SDL_Rect clip) { render(x, y, clip); }
 
 void ColeTexture::render(int x, int y)
 {

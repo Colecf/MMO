@@ -27,7 +27,7 @@ Player::Player()
     networkMessage = "";
     name = "";
     socket = NULL;
-    x = y = 0;
+    x = y = 100/2*16;
 }
 
 Player::~Player()

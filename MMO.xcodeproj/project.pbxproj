@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2B8856194B9432003F12E0 /* WorldServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED2B8853194B9432003F12E0 /* WorldServer.cpp */; };
+		ED356BE1194BB7CB007BE7E1 /* MMO.icns in Resources */ = {isa = PBXBuildFile; fileRef = ED356BE0194BB7CB007BE7E1 /* MMO.icns */; };
+		ED356BE5194BBAF0007BE7E1 /* WorldClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */; };
 		ED49807C188B31100072D6A9 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED49807B188B31100072D6A9 /* SDL2_ttf.framework */; };
 		ED49807F188B32C70072D6A9 /* ColeFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */; };
 		ED498083188B3E070072D6A9 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED498082188B3E070072D6A9 /* Vera.ttf */; };
@@ -76,6 +79,11 @@
 		ED222C01194934CA00DE1F8C /* SDL2_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL2_net.h; sourceTree = "<group>"; };
 		ED222C02194934F600DE1F8C /* SDL2_ttf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_ttf.h; sourceTree = "<group>"; };
 		ED222C031949350000DE1F8C /* SDL2_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL2_image.h; sourceTree = "<group>"; };
+		ED2B8853194B9432003F12E0 /* WorldServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldServer.cpp; sourceTree = "<group>"; };
+		ED2B8854194B9432003F12E0 /* WorldServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldServer.h; sourceTree = "<group>"; };
+		ED356BE0194BB7CB007BE7E1 /* MMO.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MMO.icns; sourceTree = "<group>"; };
+		ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldClient.cpp; sourceTree = "<group>"; };
+		ED356BE4194BBAF0007BE7E1 /* WorldClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldClient.h; sourceTree = "<group>"; };
 		ED49807B188B31100072D6A9 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeFontManager.cpp; sourceTree = "<group>"; };
 		ED49807E188B32C70072D6A9 /* ColeFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeFontManager.h; sourceTree = "<group>"; };
@@ -161,16 +169,24 @@
 			name = Windows;
 			sourceTree = "<group>";
 		};
-		ED62B837188220960046BD5E /* Common */ = {
+		ED356BE2194BBAE2007BE7E1 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				EDC0321218CBB1C100D6F995 /* GameScene.h */,
+				EDC0321118CBB1C100D6F995 /* GameScene.cpp */,
+				EDDCB57B19468D600066EAB8 /* OtherPlayer.h */,
+				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
+				ED356BE4194BBAF0007BE7E1 /* WorldClient.h */,
+				ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */,
 			);
-			name = Common;
+			name = Game;
 			sourceTree = "<group>";
 		};
 		ED62B83A1882225D0046BD5E /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B8854194B9432003F12E0 /* WorldServer.h */,
+				ED2B8853194B9432003F12E0 /* WorldServer.cpp */,
 				ED62B848188222D30046BD5E /* servermain.cpp */,
 			);
 			name = Server;
@@ -179,7 +195,7 @@
 		ED744FF71863BE3C008EB262 = {
 			isa = PBXGroup;
 			children = (
-				ED62B837188220960046BD5E /* Common */,
+				ED356BE0194BB7CB007BE7E1 /* MMO.icns */,
 				ED7450091863BE3C008EB262 /* MMO */,
 				ED7450021863BE3C008EB262 /* Frameworks */,
 				ED7450011863BE3C008EB262 /* Products */,
@@ -268,10 +284,7 @@
 				ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */,
 				EDB2444618AB3C5800995986 /* NetworkManager.h */,
 				EDB2444518AB3C5800995986 /* NetworkManager.cpp */,
-				EDC0321218CBB1C100D6F995 /* GameScene.h */,
-				EDC0321118CBB1C100D6F995 /* GameScene.cpp */,
-				EDDCB57B19468D600066EAB8 /* OtherPlayer.h */,
-				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
+				ED356BE2194BBAE2007BE7E1 /* Game */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -372,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED356BE1194BB7CB007BE7E1 /* MMO.icns in Resources */,
 				ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */,
 				ED498083188B3E070072D6A9 /* Vera.ttf in Resources */,
 				ED7450141863BE3C008EB262 /* Credits.rtf in Resources */,
@@ -389,6 +403,7 @@
 			files = (
 				EDDA4709188337A300C13E4E /* Player.cpp in Sources */,
 				EDDCB57D194693000066EAB8 /* StrToInt.cpp in Sources */,
+				ED2B8856194B9432003F12E0 /* WorldServer.cpp in Sources */,
 				EDDA4701188335D900C13E4E /* servermain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +419,7 @@
 				EDB2BCE6186A584C003AB337 /* ColeTexture.cpp in Sources */,
 				ED91E66C186F6414002A4638 /* StrToInt.cpp in Sources */,
 				EDB2444718AB3C5800995986 /* NetworkManager.cpp in Sources */,
+				ED356BE5194BBAF0007BE7E1 /* WorldClient.cpp in Sources */,
 				ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */,
 				ED74503E1863C115008EB262 /* RealMain.cpp in Sources */,
 				EDAF14FD18935AF400AB3953 /* MainMenu.cpp in Sources */,
@@ -535,7 +551,6 @@
 		ED7450321863BE3C008EB262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +568,6 @@
 		ED7450331863BE3C008EB262 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

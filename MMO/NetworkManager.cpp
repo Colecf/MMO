@@ -21,10 +21,6 @@ std::string NetworkManager::connect(std::string server)
         return SDLNet_GetError();
     }
     
-    std::string message = "getWorld;";
-    //SDLNet_TCP_Send(p->socket, message.c_str(), (int)strlen(message.c_str()));
-    p->sendNetworkMessage(message);
-    
     return "";
 }
 

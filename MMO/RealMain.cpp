@@ -86,11 +86,7 @@ int realMain(int argc, char * arg[])
         }
         
         render->clearScreen();
-        for(int x=0; x<100; x++)
-        {
-            ColeTileset::loadedSet->renderTile((x%10)*16, (x/10)*16, "grass2");
-        }
-        
+        ColeScene::currentScene->update();
         ColeScene::currentScene->render();
         render->updateScreen();
     }

@@ -19,6 +19,7 @@ public:
     MainMenu();
     //void render();
     virtual void onEvent(SDL_Event *e);
+    virtual void render();
 private:
     std::shared_ptr<ColeTextBox> serverIPBox;
     std::shared_ptr<ColeTextBox> nameBox;
