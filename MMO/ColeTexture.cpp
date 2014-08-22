@@ -18,12 +18,12 @@ ColeTexture::ColeTexture()
     fullRect = {0, 0, 0, 0};
 }
 
-ColeTexture::ColeTexture(std::string path)
+ColeTexture::ColeTexture(std::string path) : ColeTexture()
 {
     texture = RenderManager::getInstance()->loadTexture(path, &width, &height);
     fullRect = {0, 0, width, height};
 }
-ColeTexture::ColeTexture(SDL_Surface *surface)
+ColeTexture::ColeTexture(SDL_Surface *surface) : ColeTexture()
 {
     texture = RenderManager::getInstance()->createTextureFromSurface(surface);
     width = surface->w;

@@ -8,6 +8,7 @@
 
 #include "Player.h"
 #include "StrToInt.h"
+#include "MathHelper.h"
 #include <iostream>
 
 void Player::sendNetworkMessage(std::string message)
@@ -39,19 +40,28 @@ Player::~Player()
     }
 }
 
+void Player::update()
+{
+    shootCooldown--;
+}
+
 std::string Player::connectToServer(std::string server)
 {
     IPaddress serverIP;
     
     if(SDLNet_ResolveHost(&serverIP, server.c_str(), 9999)==-1) {
-        std::cout << "ERROR SDLNet_ResolveHost " << SDLNet_GetError() << std::endl;
-        return SDLNet_GetError();
+        std::string error = "ERROR SDLNet_ResolveHost ";
+        error += SDLNet_GetError();
+        std::cout << error << std::endl;
+        return error;
     }
     
     setSocket(SDLNet_TCP_Open(&serverIP));
     if(!socket) {
-        std::cout << "SDLNet_TCP_Open: " << SDLNet_GetError() << std::endl;
-        return SDLNet_GetError();
+        std::string error = "ERROR SDLNet_TCP_Open ";
+        error += SDLNet_GetError();
+        std::cout << error << std::endl;
+        return error;
     }
     
     return "";
@@ -96,7 +106,16 @@ void Player::move(int dx, int dy)
     x += dx;
     y += dy;
     
-    std::string message = "move:"+intToStr(x)+"§"+intToStr(y)+";";
+    std::string message = "move§"+intToStr(x)+"§"+intToStr(y)+";";
     
     sendNetworkMessage(message);
+}
+
+bool Player::shootTowards(int sx, int sy)
+{
+    if (shootCooldown > 0) return false;
+    
+    sendNetworkMessage("shoot§"+doubleToStr(angleBetween(x, y, sx, sy))+"§"+doubleToStr(5)+"§"+doubleToStr(100)+"§"+intToStr(0)+";");
+    shootCooldown = SHOOTCOOLDOWNMAX;
+    return true;
 }

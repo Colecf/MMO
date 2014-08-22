@@ -68,11 +68,11 @@ int realMain(int argc, char * arg[])
     SDL_Event e;
     while(!quit)
     {
-        fps.limitTo(60);
+        fps.limitTo(30);
         fps.nextFrame();
         while (SDL_PollEvent(&e) != 0)
         {
-            if (e.type == SDL_MOUSEBUTTONDOWN)
+            if (e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP)
             {
                 e.button.x /= render->getScaleX();
                 e.button.y /= render->getScaleY();

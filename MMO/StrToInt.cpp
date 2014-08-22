@@ -35,4 +35,24 @@ std::string intToStr(int i)
 #endif
 }
 
+double strToDouble(std::string s)
+{
+    std::stringstream ss;
+    ss << s;
+    double result;
+    ss >> result;
+    return result;
+}
+std::string doubleToStr(double i)
+{
+    //Bug in mingw doesn't have std::to_string
+#ifdef __WIN32__
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
+#else
+    return std::to_string(i);
+#endif
+}
+
 #endif

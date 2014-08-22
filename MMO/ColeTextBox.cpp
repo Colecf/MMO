@@ -32,16 +32,14 @@ ColeTextBox::ColeTextBox(int width)
 
 void ColeTextBox::redisplay()
 {
-    if (textTexture != NULL)
-    {
-        removeChild(textTexture);
-        //delete textTexture;
-    }
     if (containedText.length() > 0)
     {
         removeChild(textTexture);
         textTexture = ColeFontManager::getInstance()->createTextTexture(containedText);
         addChild(textTexture);
+    } else if (textTexture != NULL)
+    {
+        removeChild(textTexture);
     }
 }
 
@@ -80,4 +78,13 @@ void ColeTextBox::onEvent(SDL_Event *e)
         cursorPos--;
         redisplay();
     }
+}
+
+std::string ColeTextBox::getContainedText() { return containedText; }
+void ColeTextBox::setContainedText(std::string newText)
+{
+    containedText = newText;
+    redisplay();
+    redisplay(); //TODO: Sometimes it won't redisplay unless you do it twice
+                 // One example is when I try to set it to "Username" as a default
 }

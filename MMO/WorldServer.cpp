@@ -29,7 +29,7 @@ void World::saveToFile(std::string filename)
 
 std::string World::getNetworkMessage()
 {
-    std::string message = "world:";
+    std::string message = "world§";
     message += intToStr(WORLDSIZE);
     for (int x=0; x<WORLDSIZE; x++) {
         for (int y=0; y<WORLDSIZE; y++) {

@@ -22,6 +22,7 @@ public:
     GameScene(std::string name, std::shared_ptr<Player> thePlayer);
     virtual void render();
     virtual void update();
+    virtual void onEvent(SDL_Event *e);
 private:
     std::shared_ptr<OtherPlayer> getOtherPlayerByName(std::string name);
     int scx, scy; //Screen center x and y

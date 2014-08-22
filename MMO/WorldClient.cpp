@@ -8,6 +8,7 @@
 
 #include "WorldClient.h"
 #include "ColeTileset.h"
+#include "BulletClient.h"
 
 World::World()
 {
@@ -37,5 +38,23 @@ void World::render()
             ColeTileset::loadedSet->renderTile(x+(tilex*16), y+(tiley*16), tiles[tilex][tiley]);
         }
     }
+    
+    std::list<std::shared_ptr<ColeScene>>::iterator it = children.begin();
+    while(it != children.end()) {
+        if ((*it)->tag == 1)
+        {
+            std::shared_ptr<BulletBase> b = std::dynamic_pointer_cast<BulletBase>(*it);
+            if (b->ttl <= 0)
+            {
+                std::cout << "Erasing bullet!" << std::endl;
+                it = children.erase(it);
+            } else {
+                it++;
+            }
+        } else {
+            it++;
+        }
+    }
+    
     ColeScene::render();
 }

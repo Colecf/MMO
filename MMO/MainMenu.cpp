@@ -11,6 +11,8 @@
 #include "ColeFontManager.h"
 #include "NetworkManager.h"
 #include "GameScene.h"
+#include "ColeButton.h"
+#include "ColeDefines.h"
 #include <memory>
 
 MainMenu::MainMenu()
@@ -19,18 +21,23 @@ MainMenu::MainMenu()
     title->x = (640/3/2)-(title->getWidth()/2);
     std::cout << title->x << std::endl;
     addChild(title);
-    serverIPBox = std::make_shared<ColeTextBox>(100);
-    serverIPBox->x = 10;
-    serverIPBox->y = 50;
-    serverIPBox->containedText = "localhost";
-    serverIPBox->redisplay();
-    addChild(serverIPBox);
     nameBox = std::make_shared<ColeTextBox>(100);
     nameBox->x = 10;
     nameBox->y = 20;
-    nameBox->containedText = "Username";
-    nameBox->redisplay();
+    nameBox->setContainedText("hello");
     addChild(nameBox);
+    serverIPBox = std::make_shared<ColeTextBox>(100);
+    serverIPBox->x = 10;
+    serverIPBox->y = 50;
+    serverIPBox->setContainedText("localhost");
+    addChild(serverIPBox);
+    
+    connectButton = std::make_shared<ColeButton>(30, 15);
+    connectButton->x = 15;
+    connectButton->y = 80;
+    connectButton->tag = 5;
+    connectButton->setText("Login");
+    addChild(connectButton);
 }
 
 void MainMenu::render()
@@ -61,20 +68,20 @@ void MainMenu::onEvent(SDL_Event *e)
 {
     ColeScene::onEvent(e);
     
-    if (e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN && serverIPBox->containedText.length()>0 && nameBox->containedText.length()>0)
+    if ((e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN && serverIPBox->getContainedText().length()>0 && nameBox->getContainedText().length()>0) || (e->user.data1 != NULL && e->user.code == BUTTON_PRESSED && *((int*)e->user.data1) == 5 && nameBox->getContainedText().length()>0))
     {
         std::cout << "Enter" << std::endl;
         std::shared_ptr<Player> p = std::make_shared<Player>();
-        std::string result = p->connectToServer(serverIPBox->containedText);
-        std::cout << result << std::endl;
+        std::string result = p->connectToServer(serverIPBox->getContainedText());
+        std::cout << "result: " << result << std::endl;
         if (result != "")
         {
             std::shared_ptr<ColeTexture> errormsg = ColeFontManager::getInstance()->createTextTexture(result);
             errormsg->x = serverIPBox->x;
-            errormsg->y = serverIPBox->y + 20;
+            errormsg->y = 120;
             addChild(errormsg);
         } else {
-            ColeScene::currentScene = std::make_shared<GameScene>(nameBox->containedText, p);
+            ColeScene::currentScene = std::make_shared<GameScene>(nameBox->getContainedText(), p);
         }
     }
 }

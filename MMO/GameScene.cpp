@@ -11,16 +11,18 @@
 #include "NetworkManager.h"
 #include "ColeTileset.h"
 #include "StrToInt.h"
+#include "BulletClient.h"
+#include "MathHelper.h"
 #include <vector>
 
 GameScene::GameScene(std::string name, std::shared_ptr<Player> thePlayer)
 {
     p = thePlayer;
     p->name = name;
-    p->gameClass = 5;
+    p->gameClass = rand()%10;
     scx = RenderManager::getInstance()->getScaledScreenX()/2-8;
     scy = RenderManager::getInstance()->getScaledScreenY()/2-8;
-    p->sendNetworkMessage("join:"+name+"§5;");
+    p->sendNetworkMessage("join§"+name+"§"+intToStr(p->gameClass)+";");
     w = std::make_shared<World>();
     addChild(w);
 }
@@ -38,8 +40,15 @@ std::shared_ptr<OtherPlayer> GameScene::getOtherPlayerByName(std::string name)
     return NULL;
 }
 
+void GameScene::onEvent(SDL_Event *e)
+{
+    ColeScene::onEvent(e);
+}
+
 void GameScene::update()
 {
+    ColeScene::update();
+    p->update();
     std::string result = p->clientNetworkUpdate();
     while (result != "")
     {
@@ -47,9 +56,9 @@ void GameScene::update()
         if (result != "")
         {
             result = result.substr(0, result.length()-1); // Remove the ;
-            std::string command = result.substr(0, result.find(":"));
+            std::string command = result.substr(0, result.find("§"));
             std::vector<std::string> arguments;
-            std::string argumentsString = result.substr(result.find(":")+1);
+            std::string argumentsString = result.substr(result.find("§")+2);
             while (argumentsString.length()>0)
             {
                 arguments.push_back(argumentsString.substr(0, argumentsString.find("§")));
@@ -93,18 +102,55 @@ void GameScene::update()
                     }
                 }
             }
+            
+            if (command == "newbullet" && arguments[0] != p->name)
+            {
+                std::shared_ptr<BulletClient> b = std::make_shared<BulletClient>();
+                //s.broadcast("newbullet§"+p->name+"§"+doubleToStr(b->x)+"§"+doubleToStr(b->y)+"§"+doubleToStr(b->angle)+"§"+doubleToStr(b->speed)+"§"+doubleToStr(b->ttl)+"§"+doubleToStr(b->bulletType)+";");
+                b->owner = arguments[0];
+                b->setPos(strToDouble(arguments[1]), strToDouble(arguments[2]));
+                b->angle = strToDouble(arguments[3]);
+                b->speed = strToDouble(arguments[4]);
+                b->ttl = strToDouble(arguments[5]);
+                b->bulletType = strToInt(arguments[6]);
+                b->tag = 1;
+                w->addChild(b);
+            }
         }
+        
+        
         
         result = p->clientNetworkUpdate();
     }
     
     int futurex = 0, futurey = 0;
     const Uint8 *state = SDL_GetKeyboardState( NULL );
-    if (state[SDL_SCANCODE_UP]) futurey--;
-    if (state[SDL_SCANCODE_DOWN]) futurey++;
-    if (state[SDL_SCANCODE_LEFT]) futurex--;
-    if (state[SDL_SCANCODE_RIGHT]) futurex++;
-    p->move(futurex, futurey);
+    if (state[SDL_SCANCODE_W]) futurey--;
+    if (state[SDL_SCANCODE_S]) futurey++;
+    if (state[SDL_SCANCODE_A]) futurex--;
+    if (state[SDL_SCANCODE_D]) futurex++;
+    if (futurex != 0 || futurey != 0)
+        p->move(futurex, futurey);
+    
+    int mousex, mousey;
+    Uint32 mouseState = SDL_GetMouseState(&mousex, &mousey);
+    
+    if (mouseState&SDL_BUTTON(1))
+    {
+        int altMouseX = mousex+p->x-(RenderManager::getInstance()->getScreenX()/2);
+        int altMouseY = mousey+p->y-(RenderManager::getInstance()->getScreenY()/2);
+        if (p->shootTowards(altMouseX, altMouseY))
+        {
+            std::shared_ptr<BulletClient> b = std::make_shared<BulletClient>();
+            b->setPos(p->x, p->y);
+            b->speed = 5;
+            b->ttl = 100;
+            b->angle = angleBetween(p->x, p->y, altMouseX, altMouseY);
+            b->owner = p->name;
+            b->tag = 1;
+            w->addChild(b);
+        }
+    }
 }
 
 void GameScene::render()
@@ -112,5 +158,5 @@ void GameScene::render()
     w->x = -p->x + scx;
     w->y = -p->y + scy;
     ColeScene::render();
-    ColeTileset::loadedSet->renderTile(scx, scy, 195);
+    ColeTileset::loadedSet->renderTile(scx, scy, 190+p->gameClass);
 }

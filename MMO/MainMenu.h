@@ -11,6 +11,7 @@
 
 #include "ColeScene.h"
 #include "ColeTextBox.h"
+#include "ColeButton.h"
 #include <iostream>
 
 class MainMenu : public ColeScene
@@ -23,6 +24,7 @@ public:
 private:
     std::shared_ptr<ColeTextBox> serverIPBox;
     std::shared_ptr<ColeTextBox> nameBox;
+    std::shared_ptr<ColeButton> connectButton;
 };
 
 #endif /* defined(__MMO__MainMenu__) */

@@ -24,9 +24,9 @@ public:
     void addChild(std::shared_ptr<ColeScene> child);
     void removeChild(std::shared_ptr<ColeScene> child);
     SDL_Point getAbsoluteCoords();
-    int x, y;
+    int x, y, tag;
     static int penX, penY;
-private:
+protected:
     std::list<std::shared_ptr<ColeScene>> children;
     ColeScene *parent;
 };

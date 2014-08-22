@@ -14,7 +14,7 @@ std::shared_ptr<ColeScene> ColeScene::currentScene;
 
 ColeScene::ColeScene()
 {
-    x = y = 0;
+    x = y = tag = 0;
     parent = NULL;
 }
 

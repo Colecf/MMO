@@ -14,6 +14,10 @@
 		ED49807F188B32C70072D6A9 /* ColeFontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */; };
 		ED498083188B3E070072D6A9 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED498082188B3E070072D6A9 /* Vera.ttf */; };
 		ED5848CB18A08AED002C9AF2 /* FPSCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */; };
+		ED678FAE194D2E4700387CEF /* MathHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED678FAC194D2E4700387CEF /* MathHelper.cpp */; };
+		ED678FAF194D2E4700387CEF /* MathHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED678FAC194D2E4700387CEF /* MathHelper.cpp */; };
+		ED678FB2194D45D900387CEF /* BulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED678FB0194D45D900387CEF /* BulletBase.cpp */; };
+		ED678FB3194D45D900387CEF /* BulletBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED678FB0194D45D900387CEF /* BulletBase.cpp */; };
 		ED6CF50C194818A9006B0CF8 /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED49807B188B31100072D6A9 /* SDL2_ttf.framework */; };
 		ED7450041863BE3C008EB262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7450031863BE3C008EB262 /* Cocoa.framework */; };
 		ED74500E1863BE3C008EB262 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED74500C1863BE3C008EB262 /* InfoPlist.strings */; };
@@ -28,6 +32,7 @@
 		ED7450441863C21F008EB262 /* SDL2_net.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED7450421863C21B008EB262 /* SDL2_net.framework */; };
 		ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED7450491863C584008EB262 /* ResourcePath.mm */; };
 		ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED74504C1863C7A7008EB262 /* RenderManager.cpp */; };
+		ED7BD7FC19A7CFE400F3D3D4 /* ColeButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED7BD7FA19A7CFE400F3D3D4 /* ColeButton.cpp */; };
 		ED91E669186F60C4002A4638 /* ColeTileset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E667186F60C4002A4638 /* ColeTileset.cpp */; };
 		ED91E66C186F6414002A4638 /* StrToInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E66A186F6414002A4638 /* StrToInt.cpp */; };
 		ED91E66E186F6996002A4638 /* tileset.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED91E66D186F6996002A4638 /* tileset.txt */; };
@@ -45,6 +50,7 @@
 		EDDCB57C19468D600066EAB8 /* OtherPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */; };
 		EDDCB57D194693000066EAB8 /* StrToInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED91E66A186F6414002A4638 /* StrToInt.cpp */; };
 		EDDDC0B2189B6E3100E478CB /* ColeTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */; };
+		EDEBB49819522E6400D0A856 /* BulletClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDEBB49619522E6400D0A856 /* BulletClient.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +99,10 @@
 		ED62B839188222320046BD5E /* StrToInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrToInt.h; sourceTree = "<group>"; };
 		ED62B83F188222A40046BD5E /* MMO_Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MMO_Server; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED62B848188222D30046BD5E /* servermain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servermain.cpp; sourceTree = "<group>"; };
+		ED678FAC194D2E4700387CEF /* MathHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathHelper.cpp; sourceTree = "<group>"; };
+		ED678FAD194D2E4700387CEF /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
+		ED678FB0194D45D900387CEF /* BulletBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletBase.cpp; sourceTree = "<group>"; };
+		ED678FB1194D45D900387CEF /* BulletBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletBase.h; sourceTree = "<group>"; };
 		ED7450001863BE3C008EB262 /* MMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7450031863BE3C008EB262 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ED7450061863BE3C008EB262 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -112,10 +122,13 @@
 		ED74504B1863C5A9008EB262 /* RealMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealMain.h; sourceTree = "<group>"; };
 		ED74504C1863C7A7008EB262 /* RenderManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderManager.cpp; sourceTree = "<group>"; };
 		ED74504D1863C7A7008EB262 /* RenderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderManager.h; sourceTree = "<group>"; };
+		ED7BD7FA19A7CFE400F3D3D4 /* ColeButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeButton.cpp; sourceTree = "<group>"; };
+		ED7BD7FB19A7CFE400F3D3D4 /* ColeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeButton.h; sourceTree = "<group>"; };
 		ED91E667186F60C4002A4638 /* ColeTileset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeTileset.cpp; sourceTree = "<group>"; };
 		ED91E668186F60C4002A4638 /* ColeTileset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeTileset.h; sourceTree = "<group>"; };
 		ED91E66A186F6414002A4638 /* StrToInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StrToInt.cpp; sourceTree = "<group>"; };
 		ED91E66D186F6996002A4638 /* tileset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tileset.txt; sourceTree = "<group>"; };
+		ED9A89DE19A7D56800D285F6 /* ColeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeDefines.h; sourceTree = "<group>"; };
 		EDAF14F81893591F00AB3953 /* ColeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeScene.cpp; sourceTree = "<group>"; };
 		EDAF14F91893591F00AB3953 /* ColeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeScene.h; sourceTree = "<group>"; };
 		EDAF14FB18935AF400AB3953 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
@@ -133,6 +146,8 @@
 		EDDCB57B19468D600066EAB8 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPlayer.h; sourceTree = "<group>"; };
 		EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColeTextBox.cpp; sourceTree = "<group>"; };
 		EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColeTextBox.h; sourceTree = "<group>"; };
+		EDEBB49619522E6400D0A856 /* BulletClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletClient.cpp; sourceTree = "<group>"; };
+		EDEBB49719522E6400D0A856 /* BulletClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletClient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +193,8 @@
 				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
 				ED356BE4194BBAF0007BE7E1 /* WorldClient.h */,
 				ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */,
+				EDEBB49719522E6400D0A856 /* BulletClient.h */,
+				EDEBB49619522E6400D0A856 /* BulletClient.cpp */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -280,6 +297,9 @@
 				EDAF14FB18935AF400AB3953 /* MainMenu.cpp */,
 				EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */,
 				EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */,
+				ED7BD7FB19A7CFE400F3D3D4 /* ColeButton.h */,
+				ED7BD7FA19A7CFE400F3D3D4 /* ColeButton.cpp */,
+				ED9A89DE19A7D56800D285F6 /* ColeDefines.h */,
 				ED5848CA18A08AED002C9AF2 /* FPSCounter.h */,
 				ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */,
 				EDB2444618AB3C5800995986 /* NetworkManager.h */,
@@ -308,8 +328,12 @@
 				ED222C031949350000DE1F8C /* SDL2_image.h */,
 				ED62B839188222320046BD5E /* StrToInt.h */,
 				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
+				ED678FAD194D2E4700387CEF /* MathHelper.h */,
+				ED678FAC194D2E4700387CEF /* MathHelper.cpp */,
 				EDDA47071883375E00C13E4E /* Player.h */,
 				EDDA47061883375E00C13E4E /* Player.cpp */,
+				ED678FB1194D45D900387CEF /* BulletBase.h */,
+				ED678FB0194D45D900387CEF /* BulletBase.cpp */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -401,9 +425,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED678FB3194D45D900387CEF /* BulletBase.cpp in Sources */,
 				EDDA4709188337A300C13E4E /* Player.cpp in Sources */,
 				EDDCB57D194693000066EAB8 /* StrToInt.cpp in Sources */,
 				ED2B8856194B9432003F12E0 /* WorldServer.cpp in Sources */,
+				ED678FAF194D2E4700387CEF /* MathHelper.cpp in Sources */,
 				EDDA4701188335D900C13E4E /* servermain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,17 +442,21 @@
 				EDDA47081883375E00C13E4E /* Player.cpp in Sources */,
 				ED74504A1863C584008EB262 /* ResourcePath.mm in Sources */,
 				ED91E669186F60C4002A4638 /* ColeTileset.cpp in Sources */,
+				EDEBB49819522E6400D0A856 /* BulletClient.cpp in Sources */,
 				EDB2BCE6186A584C003AB337 /* ColeTexture.cpp in Sources */,
 				ED91E66C186F6414002A4638 /* StrToInt.cpp in Sources */,
 				EDB2444718AB3C5800995986 /* NetworkManager.cpp in Sources */,
 				ED356BE5194BBAF0007BE7E1 /* WorldClient.cpp in Sources */,
+				ED7BD7FC19A7CFE400F3D3D4 /* ColeButton.cpp in Sources */,
 				ED74504E1863C7A7008EB262 /* RenderManager.cpp in Sources */,
+				ED678FB2194D45D900387CEF /* BulletBase.cpp in Sources */,
 				ED74503E1863C115008EB262 /* RealMain.cpp in Sources */,
 				EDAF14FD18935AF400AB3953 /* MainMenu.cpp in Sources */,
 				EDC0321318CBB1C100D6F995 /* GameScene.cpp in Sources */,
 				ED49807F188B32C70072D6A9 /* ColeFontManager.cpp in Sources */,
 				EDDDC0B2189B6E3100E478CB /* ColeTextBox.cpp in Sources */,
 				ED7450101863BE3C008EB262 /* main.cpp in Sources */,
+				ED678FAE194D2E4700387CEF /* MathHelper.cpp in Sources */,
 				EDAF14FA1893591F00AB3953 /* ColeScene.cpp in Sources */,
 				EDDCB57C19468D600066EAB8 /* OtherPlayer.cpp in Sources */,
 			);
@@ -463,7 +493,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					SERVER,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -476,6 +506,7 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = SERVER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -558,7 +589,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					CLIENT,
+					"DEBUG=1",
+				);
 				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -575,7 +611,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = CLIENT;
 				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
