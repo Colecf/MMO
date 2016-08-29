@@ -59,6 +59,14 @@ void ColeTexture::render(int x, int y, SDL_Rect clip)
     SDL_Rect dstrect = {x, y, clip.w, clip.h};
     SDL_RenderCopy(RenderManager::getInstance()->renderer, texture, &clip, &dstrect);
 }
+void ColeTexture::render(int x, int y, SDL_Rect clip, double angle)
+{
+    x += ColeScene::penX;
+    y += ColeScene::penY;
+    SDL_Rect dstrect = {x, y, clip.w, clip.h};
+    SDL_RenderCopyEx(RenderManager::getInstance()->renderer, texture, &clip, &dstrect,
+                     angle, NULL, SDL_FLIP_NONE);
+}
 
 int ColeTexture::getWidth() { return width; }
 int ColeTexture::getHeight() { return height; }

@@ -91,3 +91,16 @@ void ColeTileset::renderTile(int x, int y, int tileID)
     SDL_Rect rect = {tileX, tileY, tilewidth, tileheight};
     ColeTexture::render(x, y, rect);
 }
+
+void ColeTileset::renderTile(int x, int y, int tileID, double angle)
+{
+    if (customSize == true || width%tilewidth != 0 || height%tileheight != 0)
+    {
+        std::cout << "ERROR: Can't render tile by ID because of nonstandard sizes." << std::endl;
+        return;
+    }
+    int tileX = (tileID*tilewidth)%width;
+    int tileY = tileID/(width/tilewidth)*tileheight;
+    SDL_Rect rect = {tileX, tileY, tilewidth, tileheight};
+    ColeTexture::render(x, y, rect, angle);
+}

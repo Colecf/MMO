@@ -12,6 +12,7 @@
 #include <string>
 #include "ColeScene.h"
 #include <memory>
+#define PI 3.14159
 
 class ColeTexture : public ColeScene
 {
@@ -24,6 +25,7 @@ public:
     void render(SDL_Rect clip);
     void render(int x, int y);
     void render(int x, int y, SDL_Rect clip);
+    void render(int x, int y, SDL_Rect clip, double angle);
     int getWidth();
     int getHeight();
 protected:

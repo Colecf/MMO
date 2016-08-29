@@ -88,12 +88,12 @@ public:
             }
             
             std::list<std::shared_ptr<BulletBase>>::iterator it;
-            for (it = bullets.begin(); it != bullets.end(); it++) {
+            for (it = bullets.begin(); it != bullets.end();) {
                 (*it)->update();
                 if((*it)->ttl <= 0)
                 {
-                    bullets.remove(*it);
-                }
+                    it = bullets.erase(it);
+                } else ++it;
             }
             
             SDL_Delay(50);

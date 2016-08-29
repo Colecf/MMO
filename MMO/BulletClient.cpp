@@ -27,6 +27,6 @@ void BulletClient::update()
 
 void BulletClient::render()
 {
-    ColeTileset::loadedSet->renderTile(BulletBase::x, BulletBase::y, bulletType);
+    ColeTileset::loadedSet->renderTile(BulletBase::x, BulletBase::y, bulletType, 45+angle*180/PI);
     ColeScene::render();
 }

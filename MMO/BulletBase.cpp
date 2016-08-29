@@ -11,7 +11,8 @@
 
 BulletBase::BulletBase()
 {
-    x = y = angle = speed = ttl = bulletType = 0;
+    x = y = angle = speed = ttl;
+    bulletType = 157;
 }
 
 void BulletBase::update()
