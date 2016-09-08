@@ -11,6 +11,8 @@
 #include "ColeFontManager.h"
 #include <iostream>
 
+int ColeTextBox::needsTextInput = 0;
+
 ColeTextBox::ColeTextBox(int width)
 {
     enabled = true;
@@ -59,13 +61,17 @@ void ColeTextBox::onEvent(SDL_Event *e)
             && e->button.y <= coords.y+rect.h && !active)
         {
             active = true;
+            needsTextInput++;
             SDL_StartTextInput();
             SDL_SetTextInputRect(&rect);
         } else if ((e->button.x < coords.x || e->button.y < coords.y || e->button.x > coords.x+rect.w
                    || e->button.y > coords.y+rect.h) && active)
         {
             active = false;
-            SDL_StopTextInput();
+            needsTextInput--;
+            if(needsTextInput == 0) {
+                SDL_StopTextInput();
+            }
         }
     }
     if (e->type == SDL_TEXTINPUT && active)

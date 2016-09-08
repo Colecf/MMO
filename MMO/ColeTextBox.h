@@ -28,6 +28,7 @@ private:
     bool active;
     SDL_Rect rect;
     std::shared_ptr<ColeTexture> textTexture;
+    static int needsTextInput;
 };
 
 #endif /* defined(__MMO__ColeTextBox__) */
