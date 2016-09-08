@@ -37,6 +37,8 @@ void ColeTextBox::redisplay()
         removeChild(textTexture);
         textTexture = ColeFontManager::getInstance()->createTextTexture(containedText);
         addChild(textTexture);
+        textTexture->x = 1;
+        
     } else if (textTexture != NULL)
     {
         removeChild(textTexture);

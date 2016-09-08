@@ -16,12 +16,13 @@
 class ColeButton : public ColeScene
 {
 public:
-    ColeButton(int width, int height);
+    ColeButton();
     void setText(std::string text);
     bool depressed;
     virtual void onEvent(SDL_Event *e);
     std::shared_ptr<ColeTexture> textTex;
 private:
+    void createBackground();
     void depress();
     void release();
     std::shared_ptr<ColeTexture> upTex;

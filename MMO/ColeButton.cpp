@@ -11,11 +11,27 @@
 #include "ColeFontManager.h"
 #include "ColeDefines.h"
 
-ColeButton::ColeButton(int width, int height)
+ColeButton::ColeButton()
 {
     depressed = false;
-    rect = {0, 0, width, height};
-    SDL_Surface* bgSurface = RenderManager::getInstance()->createSDLSurface(width, height);
+    rect = {0, 0, 0, 0};
+}
+
+void ColeButton::setText(std::string text)
+{
+    removeChild(textTex);
+    textTex = ColeFontManager::getInstance()->createTextTexture(text);
+    textTex->x = 1;
+    textTex->y = 0;
+    rect.w = textTex->getWidth()+2;
+    rect.h = textTex->getHeight()+1;
+    createBackground();
+    
+    addChild(textTex);
+}
+
+void ColeButton::createBackground() {
+    SDL_Surface* bgSurface = RenderManager::getInstance()->createSDLSurface(rect.w, rect.h);
     SDL_FillRect(bgSurface, &rect, SDL_MapRGB(bgSurface->format, 30, 30, 30));
     rect.x++;
     rect.y++;
@@ -30,14 +46,6 @@ ColeButton::ColeButton(int width, int height)
     SDL_FreeSurface(bgSurface);
     
     addChild(upTex);
-}
-
-void ColeButton::setText(std::string text)
-{
-    textTex = ColeFontManager::getInstance()->createTextTexture(text);
-    textTex->x = 1;
-    textTex->y = 1;
-    addChild(textTex);
 }
 
 void ColeButton::depress()

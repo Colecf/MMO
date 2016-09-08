@@ -32,7 +32,7 @@ MainMenu::MainMenu()
     serverIPBox->setContainedText("localhost");
     addChild(serverIPBox);
     
-    connectButton = std::make_shared<ColeButton>(30, 15);
+    connectButton = std::make_shared<ColeButton>();
     connectButton->x = 15;
     connectButton->y = 80;
     connectButton->tag = 5;
@@ -68,7 +68,7 @@ void MainMenu::onEvent(SDL_Event *e)
 {
     ColeScene::onEvent(e);
     
-    if ((e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN && serverIPBox->getContainedText().length()>0 && nameBox->getContainedText().length()>0) || (e->user.data1 != NULL && e->user.code == BUTTON_PRESSED && *((int*)e->user.data1) == 5 && nameBox->getContainedText().length()>0))
+    if (((e->type == SDL_KEYDOWN && e->key.keysym.sym == SDLK_RETURN) || (e->user.data1 != NULL && e->user.code == BUTTON_PRESSED && *((int*)e->user.data1) == 5)) && serverIPBox->getContainedText().length()>0 && nameBox->getContainedText().length()>0)
     {
         std::cout << "Enter" << std::endl;
         std::shared_ptr<Player> p = std::make_shared<Player>();
