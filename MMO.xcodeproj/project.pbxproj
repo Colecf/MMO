@@ -178,66 +178,66 @@
 		ED222A7919492F7D00DE1F8C /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				ED222A7B19492FD500DE1F8C /* wincomp.sh */,
 				ED222A7A19492F9A00DE1F8C /* ResourcePath.cpp */,
+				ED222A7B19492FD500DE1F8C /* wincomp.sh */,
 			);
-			name = Windows;
+			path = Windows;
 			sourceTree = "<group>";
 		};
 		ED356BE2194BBAE2007BE7E1 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				EDC0321218CBB1C100D6F995 /* GameScene.h */,
-				EDC0321118CBB1C100D6F995 /* GameScene.cpp */,
-				EDDCB57B19468D600066EAB8 /* OtherPlayer.h */,
-				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
-				ED356BE4194BBAF0007BE7E1 /* WorldClient.h */,
-				ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */,
-				EDEBB49719522E6400D0A856 /* BulletClient.h */,
 				EDEBB49619522E6400D0A856 /* BulletClient.cpp */,
+				EDEBB49719522E6400D0A856 /* BulletClient.h */,
+				EDC0321118CBB1C100D6F995 /* GameScene.cpp */,
+				EDC0321218CBB1C100D6F995 /* GameScene.h */,
+				EDDCB57A19468D600066EAB8 /* OtherPlayer.cpp */,
+				EDDCB57B19468D600066EAB8 /* OtherPlayer.h */,
+				ED356BE3194BBAF0007BE7E1 /* WorldClient.cpp */,
+				ED356BE4194BBAF0007BE7E1 /* WorldClient.h */,
 			);
-			name = Game;
+			path = Game;
 			sourceTree = "<group>";
 		};
 		ED62B83A1882225D0046BD5E /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				ED2B8854194B9432003F12E0 /* WorldServer.h */,
 				ED2B8853194B9432003F12E0 /* WorldServer.cpp */,
+				ED2B8854194B9432003F12E0 /* WorldServer.h */,
 				ED62B848188222D30046BD5E /* servermain.cpp */,
 			);
-			name = Server;
+			path = Server;
 			sourceTree = "<group>";
 		};
 		ED680B2B1D826A11006D5BF8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				ED62B839188222320046BD5E /* StrToInt.h */,
-				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
-				ED678FAD194D2E4700387CEF /* MathHelper.h */,
 				ED678FAC194D2E4700387CEF /* MathHelper.cpp */,
+				ED678FAD194D2E4700387CEF /* MathHelper.h */,
+				ED91E66A186F6414002A4638 /* StrToInt.cpp */,
+				ED62B839188222320046BD5E /* StrToInt.h */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		ED680B2C1D826A3A006D5BF8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */,
-				EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */,
-				ED7BD7FB19A7CFE400F3D3D4 /* ColeButton.h */,
 				ED7BD7FA19A7CFE400F3D3D4 /* ColeButton.cpp */,
+				ED7BD7FB19A7CFE400F3D3D4 /* ColeButton.h */,
+				EDDDC0B0189B6E3100E478CB /* ColeTextBox.cpp */,
+				EDDDC0B1189B6E3100E478CB /* ColeTextBox.h */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		ED744FF71863BE3C008EB262 = {
 			isa = PBXGroup;
 			children = (
-				ED356BE0194BB7CB007BE7E1 /* MMO.icns */,
-				ED7450091863BE3C008EB262 /* MMO */,
 				ED7450021863BE3C008EB262 /* Frameworks */,
+				ED7450091863BE3C008EB262 /* MMO */,
 				ED7450011863BE3C008EB262 /* Products */,
+				ED356BE0194BB7CB007BE7E1 /* MMO.icns */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,12 +277,12 @@
 		ED7450091863BE3C008EB262 /* MMO */ = {
 			isa = PBXGroup;
 			children = (
-				EDDA47041883365800C13E4E /* Common */,
-				ED222A7919492F7D00DE1F8C /* Windows */,
-				ED62B83A1882225D0046BD5E /* Server */,
 				ED74503B1863C0F3008EB262 /* Client */,
+				EDDA47041883365800C13E4E /* Common */,
 				EDB2BCE1186A4F1A003AB337 /* Resources */,
+				ED62B83A1882225D0046BD5E /* Server */,
 				ED74500A1863BE3C008EB262 /* Supporting Files */,
+				ED222A7919492F7D00DE1F8C /* Windows */,
 			);
 			path = MMO;
 			sourceTree = "<group>";
@@ -290,42 +290,42 @@
 		ED74500A1863BE3C008EB262 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ED74500F1863BE3C008EB262 /* main.cpp */,
+				ED7450121863BE3C008EB262 /* Credits.rtf */,
+				ED74500C1863BE3C008EB262 /* InfoPlist.strings */,
+				ED74500B1863BE3C008EB262 /* MMO-Info.plist */,
 				ED7450481863C584008EB262 /* ResourcePath.h */,
 				ED7450491863C584008EB262 /* ResourcePath.mm */,
-				ED74500B1863BE3C008EB262 /* MMO-Info.plist */,
-				ED74500C1863BE3C008EB262 /* InfoPlist.strings */,
-				ED7450121863BE3C008EB262 /* Credits.rtf */,
+				ED74500F1863BE3C008EB262 /* main.cpp */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		ED74503B1863C0F3008EB262 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				ED74504B1863C5A9008EB262 /* RealMain.h */,
-				ED74503C1863C115008EB262 /* RealMain.cpp */,
-				ED74504D1863C7A7008EB262 /* RenderManager.h */,
-				ED74504C1863C7A7008EB262 /* RenderManager.cpp */,
-				EDAF14F91893591F00AB3953 /* ColeScene.h */,
-				EDAF14F81893591F00AB3953 /* ColeScene.cpp */,
-				EDB2BCE5186A584C003AB337 /* ColeTexture.h */,
-				EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */,
-				ED91E668186F60C4002A4638 /* ColeTileset.h */,
-				ED91E667186F60C4002A4638 /* ColeTileset.cpp */,
-				ED49807E188B32C70072D6A9 /* ColeFontManager.h */,
-				ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */,
-				EDAF14FC18935AF400AB3953 /* MainMenu.h */,
-				EDAF14FB18935AF400AB3953 /* MainMenu.cpp */,
+				ED356BE2194BBAE2007BE7E1 /* Game */,
 				ED680B2C1D826A3A006D5BF8 /* UI */,
 				ED9A89DE19A7D56800D285F6 /* ColeDefines.h */,
-				ED5848CA18A08AED002C9AF2 /* FPSCounter.h */,
+				ED49807D188B32C70072D6A9 /* ColeFontManager.cpp */,
+				ED49807E188B32C70072D6A9 /* ColeFontManager.h */,
+				EDAF14F81893591F00AB3953 /* ColeScene.cpp */,
+				EDAF14F91893591F00AB3953 /* ColeScene.h */,
+				EDB2BCE4186A584C003AB337 /* ColeTexture.cpp */,
+				EDB2BCE5186A584C003AB337 /* ColeTexture.h */,
+				ED91E667186F60C4002A4638 /* ColeTileset.cpp */,
+				ED91E668186F60C4002A4638 /* ColeTileset.h */,
 				ED5848C918A08AED002C9AF2 /* FPSCounter.cpp */,
-				EDB2444618AB3C5800995986 /* NetworkManager.h */,
+				ED5848CA18A08AED002C9AF2 /* FPSCounter.h */,
+				EDAF14FB18935AF400AB3953 /* MainMenu.cpp */,
+				EDAF14FC18935AF400AB3953 /* MainMenu.h */,
 				EDB2444518AB3C5800995986 /* NetworkManager.cpp */,
-				ED356BE2194BBAE2007BE7E1 /* Game */,
+				EDB2444618AB3C5800995986 /* NetworkManager.h */,
+				ED74503C1863C115008EB262 /* RealMain.cpp */,
+				ED74504B1863C5A9008EB262 /* RealMain.h */,
+				ED74504C1863C7A7008EB262 /* RenderManager.cpp */,
+				ED74504D1863C7A7008EB262 /* RenderManager.h */,
 			);
-			name = Client;
+			path = Client;
 			sourceTree = "<group>";
 		};
 		EDB2BCE1186A4F1A003AB337 /* Resources */ = {
@@ -335,23 +335,23 @@
 				EDB2BCE2186A4F25003AB337 /* tileset.png */,
 				ED91E66D186F6996002A4638 /* tileset.txt */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EDDA47041883365800C13E4E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ED680B2B1D826A11006D5BF8 /* Helpers */,
+				ED678FB0194D45D900387CEF /* BulletBase.cpp */,
+				ED678FB1194D45D900387CEF /* BulletBase.h */,
+				EDDA47061883375E00C13E4E /* Player.cpp */,
+				EDDA47071883375E00C13E4E /* Player.h */,
 				ED222C00194934AE00DE1F8C /* SDL2.h */,
+				ED222C031949350000DE1F8C /* SDL2_image.h */,
 				ED222C01194934CA00DE1F8C /* SDL2_net.h */,
 				ED222C02194934F600DE1F8C /* SDL2_ttf.h */,
-				ED222C031949350000DE1F8C /* SDL2_image.h */,
-				ED680B2B1D826A11006D5BF8 /* Helpers */,
-				EDDA47071883375E00C13E4E /* Player.h */,
-				EDDA47061883375E00C13E4E /* Player.cpp */,
-				ED678FB1194D45D900387CEF /* BulletBase.h */,
-				ED678FB0194D45D900387CEF /* BulletBase.cpp */,
 			);
-			name = Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +487,7 @@
 				ED74500D1863BE3C008EB262 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		ED7450121863BE3C008EB262 /* Credits.rtf */ = {
@@ -495,6 +496,7 @@
 				ED7450131863BE3C008EB262 /* en */,
 			);
 			name = Credits.rtf;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -614,7 +616,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/lib,
 				);
-				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				INFOPLIST_FILE = "MMO/Supporting Files/MMO-Info.plist";
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				OTHER_LDFLAGS = "";
@@ -639,7 +641,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/lib,
 				);
-				INFOPLIST_FILE = "MMO/MMO-Info.plist";
+				INFOPLIST_FILE = "MMO/Supporting Files/MMO-Info.plist";
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				OTHER_LDFLAGS = "";

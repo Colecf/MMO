@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0A1685E1-5C93-4A2B-813B-73C783456D83</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MMO</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B26DF2AA368F66E7508D7ABEC72685DB464DB38A</key>
+		<string>https://github.com/Colecf/MMO.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MMO.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B26DF2AA368F66E7508D7ABEC72685DB464DB38A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Colecf/MMO.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B26DF2AA368F66E7508D7ABEC72685DB464DB38A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B26DF2AA368F66E7508D7ABEC72685DB464DB38A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MMO</string>
+		</dict>
+	</array>
+</dict>
+</plist>
