@@ -220,6 +220,7 @@ int main(int argc, const char * argv[])
     int ret;
     SDL_WaitThread(keythread, &ret);
     s.cleanup();
+    SDLNet_FreeSocketSet(Player::PlayerSSet);
     SDLNet_Quit();
     SDL_Quit();
     return 0;
